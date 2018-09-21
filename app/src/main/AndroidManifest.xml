@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="simplytextile.policytracker">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -17,12 +18,10 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activties.SignupActivity" />
-        <activity android:name=".activties.LoginActivity">
-
-        </activity>
+        <activity android:name=".activties.LoginActivity"></activity>
         <activity android:name=".activties.HomeActivity" />
         <activity android:name=".activties.CustomerActivity" />
-        <activity android:name=".activties.CompaniesActivity" >
+        <activity android:name=".activties.CompaniesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +32,8 @@
         <activity android:name=".activties.NotificationActivity" />
         <activity android:name=".activties.AddCompanyActivity" />
         <activity android:name=".activties.UserProfileActivity" />
-        <activity android:name=".activties.UpdateUserProfileActivity"></activity>
+        <activity android:name=".activties.UpdateUserProfileActivity" />
+        <activity android:name=".activties.AgentsListActivity"></activity>
     </application>
 
 </manifest>

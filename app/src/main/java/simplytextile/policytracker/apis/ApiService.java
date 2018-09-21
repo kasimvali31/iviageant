@@ -8,10 +8,13 @@ package simplytextile.policytracker.apis;
         import retrofit2.http.Field;
         import retrofit2.http.FormUrlEncoded;
         import retrofit2.http.GET;
+        import retrofit2.http.Headers;
         import retrofit2.http.POST;
         import simplytextile.policytracker.companyresponse.CompanyList;
         import simplytextile.policytracker.companyresponse.Compres;
         import simplytextile.policytracker.companyresponse.Data;
+        import simplytextile.policytracker.response.AgentsResponse;
+        import simplytextile.policytracker.response.CustomerResponse;
         import simplytextile.policytracker.responses.loginresponses.LoginResponse;
 
 public interface ApiService
@@ -32,6 +35,19 @@ public interface ApiService
 
     @GET("api/companies")
     Call<List<CompanyList>> getCompaniesList();
+
+
+
+    @Headers({"Content-Type:application/json"
+            ,"app_sid:37a559d3bcd211e8be14aa3a52b410b4"})
+    @GET("api/customers")
+    Call<CustomerResponse> getCustomers();
+
+
+    @Headers({"Content-Type:application/json"
+            ,"app_sid:37a559d3bcd211e8be14aa3a52b410b4"})
+    @GET("api/agents/")
+    Call<AgentsResponse> getAgents();
 
 
 
