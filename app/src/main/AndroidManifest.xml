@@ -22,13 +22,15 @@
         <activity android:name=".activties.HomeActivity" />
         <activity android:name=".activties.CustomerActivity" />
         <activity android:name=".activties.CompaniesActivity">
+        </activity>
+        <activity android:name=".activties.PoliciesActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".activties.PoliciesActivity" />
         <activity android:name=".activties.NotificationActivity" />
         <activity android:name=".activties.AddCompanyActivity" />
         <activity android:name=".activties.UserProfileActivity" />

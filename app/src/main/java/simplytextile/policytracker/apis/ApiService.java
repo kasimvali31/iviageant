@@ -15,6 +15,7 @@ package simplytextile.policytracker.apis;
         import simplytextile.policytracker.companyresponse.Data;
         import simplytextile.policytracker.response.AgentsResponse;
         import simplytextile.policytracker.response.CustomerResponse;
+        import simplytextile.policytracker.response.PoliciesResponse;
         import simplytextile.policytracker.responses.loginresponses.LoginResponse;
 
 public interface ApiService
@@ -48,6 +49,13 @@ public interface ApiService
             ,"app_sid:37a559d3bcd211e8be14aa3a52b410b4"})
     @GET("api/agents/")
     Call<AgentsResponse> getAgents();
+
+
+    //api/policies
+    @Headers({"Content-Type:application/json"
+            ,"app_sid:37a559d3bcd211e8be14aa3a52b410b4"})
+    @GET("api/policies")
+    Call<PoliciesResponse> getPolicies();
 
 
 

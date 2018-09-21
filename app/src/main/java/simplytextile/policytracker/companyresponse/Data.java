@@ -8,6 +8,7 @@ import java.util.List;
 
 import simplytextile.policytracker.models.AgentList;
 import simplytextile.policytracker.models.CustomerList;
+import simplytextile.policytracker.models.PolicyList;
 
 public class Data  {
 
@@ -16,6 +17,17 @@ public class Data  {
     public ArrayList<CompanyList> company_list;
     private Integer totalrecords;
 
+    @SerializedName("policy_list")
+    @Expose
+    private List<PolicyList> policy_list;
+
+    public List<PolicyList> getPolicy_list() {
+        return policy_list;
+    }
+
+    public void setPolicy_list(List<PolicyList> policy_list) {
+        this.policy_list = policy_list;
+    }
 
     @SerializedName("agent_list")
     @Expose
