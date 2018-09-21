@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activties.UpdateUserProfileActivity">
+
+    <EditText
+        android:id="@+id/firstname_userprofile_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:hint="FirstName*"/>
+    <EditText
+        android:id="@+id/lastname_userprofile_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:hint="LastName*"/>
+    <EditText
+        android:id="@+id/emaail_userprofile_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:hint="Email Addrress*"/>
+
+    <EditText
+        android:id="@+id/phone_userprofile_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:hint="Phone Number*"/>
+
+    <EditText
+        android:id="@+id/aadhar_userprofile_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:hint="Aadhar Number*"/>
+    <EditText
+        android:id="@+id/address_userprofile_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:hint="Address *"/>
+
+    <EditText
+        android:id="@+id/city_userprofile_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:hint="City *"/>
+
+    <EditText
+        android:id="@+id/postalcode_userprofile_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:hint="Postal Code *"/>
+    <Spinner
+        android:id="@+id/user_select_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/register_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAppTheme"
+        android:textColor="@color/colorBlack"
+        android:layout_gravity="bottom"
+        android:text="Update Profile"/>
+
+</LinearLayout>

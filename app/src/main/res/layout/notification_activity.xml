@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
+    tools:context=".activties.NotificationActivity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/android_card_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        android:clickable="true"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="6dp"
+            android:orientation="vertical"
+            android:background="@color/colorWhite">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/cardview_list_title11aa"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="PolicyID       :"
+                    android:layout_weight="0.75"
+                    android:clickable="true"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/cardview_list_title12aa"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="123456"
+                    android:clickable="true"
+                    android:layout_weight="1.25"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/cardview_list_title11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Customer:"
+                    android:layout_weight="0.75"
+                    android:clickable="true"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/cardview_list_title12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Kasim"
+                    android:clickable="true"
+                    android:layout_weight="1.25"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/cardview_list_title11a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Contact"
+                    android:layout_weight="0.75"
+                    android:clickable="true"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/cardview_list_title12a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="FZXP123k"
+                    android:clickable="true"
+                    android:layout_weight="1.25"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:weightSum="2"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:orientation="horizontal">-->
+                <!--<TextView-->
+                    <!--android:id="@+id/cardview_list_title11a5"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Policy Number:"-->
+                    <!--android:layout_weight="0.75"-->
+                    <!--android:clickable="true"-->
+                    <!--android:textColor="@color/colorBlack"-->
+                    <!--android:textSize="16sp" />-->
+                <!--<TextView-->
+                    <!--android:id="@+id/cardview_list_title12a5"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="FP123k"-->
+                    <!--android:clickable="true"-->
+                    <!--android:layout_weight="1.25"-->
+                    <!--android:textColor="@color/colorBlack"-->
+                    <!--android:textSize="16sp" />-->
+            <!--</LinearLayout>-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/cardview_list_titler11a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Start Date:"
+                    android:layout_weight="0.75"
+                    android:clickable="true"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/cardview_list_rtitle12a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="9/12/2022"
+                    android:clickable="true"
+                    android:layout_weight="1.25"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/cardvifew_list_title11a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="End Date"
+                    android:layout_weight="0.75"
+                    android:clickable="true"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/cardview_listf_title12a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="22/12/2054"
+                    android:clickable="true"
+                    android:layout_weight="1.25"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/cardviefw_listsd_title11a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Notification Via"
+                    android:layout_weight="0.75"
+                    android:clickable="true"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/cardview_lisft_title12a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:clickable="true"
+                    android:layout_weight="1.25"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/cardviefw_lissst_title11a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Type:"
+                    android:layout_weight="0.75"
+                    android:clickable="true"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/cardvieffw_list_title12a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Life"
+                    android:clickable="true"
+                    android:layout_weight="1.25"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:weightSum="2"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:orientation="horizontal">-->
+                <!--<TextView-->
+                    <!--android:id="@+id/cardview_list_tcitle11a"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Premium:"-->
+                    <!--android:layout_weight="0.75"-->
+                    <!--android:clickable="true"-->
+                    <!--android:textColor="@color/colorBlack"-->
+                    <!--android:textSize="16sp" />-->
+                <!--<TextView-->
+                    <!--android:id="@+id/cardview_list_tffitle12a"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="annual"-->
+                    <!--android:clickable="true"-->
+                    <!--android:layout_weight="1.25"-->
+                    <!--android:textColor="@color/colorBlack"-->
+                    <!--android:textSize="16sp" />-->
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:weightSum="2"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:orientation="horizontal">-->
+                <!--<TextView-->
+                    <!--android:id="@+id/cardview_list_tffditle11a"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Status:"-->
+                    <!--android:layout_weight="0.75"-->
+                    <!--android:clickable="true"-->
+                    <!--android:textColor="@color/colorBlack"-->
+                    <!--android:textSize="16sp" />-->
+                <!--<TextView-->
+                    <!--android:id="@+id/cardcview_list_title12a"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Active"-->
+                    <!--android:clickable="true"-->
+                    <!--android:layout_weight="1.25"-->
+                    <!--android:textColor="@color/colorBlack"-->
+                    <!--android:textSize="16sp" />-->
+            <!--</LinearLayout>-->
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:weightSum="2"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:orientation="horizontal">-->
+                <!--<TextView-->
+                    <!--android:id="@+id/cardview_list_title1df1a"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Actions"-->
+                    <!--android:layout_weight="0.75"-->
+                    <!--android:clickable="true"-->
+                    <!--android:textColor="@color/colorBlack"-->
+                    <!--android:textSize="16sp" />-->
+                <!--<TextView-->
+                    <!--android:id="@+id/cardview_list_titledf12a"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="fxg"-->
+                    <!--android:clickable="true"-->
+                    <!--android:layout_weight="1.25"-->
+                    <!--android:textColor="@color/colorBlack"-->
+                    <!--android:textSize="16sp" />-->
+            <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:weightSum="2"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+            <!--android:id="@+id/cardview_list_tvdxvxitle11a"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="License Number:"-->
+            <!--android:layout_weight="0.75"-->
+            <!--android:clickable="true"-->
+            <!--android:textColor="@color/colorBlack"-->
+            <!--android:textSize="16sp" />-->
+            <!--<TextView-->
+            <!--android:id="@+id/cardview_list_tfgdvitle12a"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="FZXP123k"-->
+            <!--android:clickable="true"-->
+            <!--android:layout_weight="1.25"-->
+            <!--android:textColor="@color/colorBlack"-->
+            <!--android:textSize="16sp" />-->
+            <!--</LinearLayout>-->
+
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:weightSum="2"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+            <!--android:id="@+id/cardview_list_tsdfitle11a"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="License Number:"-->
+            <!--android:layout_weight="0.75"-->
+            <!--android:clickable="true"-->
+            <!--android:textColor="@color/colorBlack"-->
+            <!--android:textSize="16sp" />-->
+            <!--<TextView-->
+            <!--android:id="@+id/cardview_list_tidfvdtle12a"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="FZXP123k"-->
+            <!--android:clickable="true"-->
+            <!--android:layout_weight="1.25"-->
+            <!--android:textColor="@color/colorBlack"-->
+            <!--android:textSize="16sp" />-->
+            <!--</LinearLayout>-->
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

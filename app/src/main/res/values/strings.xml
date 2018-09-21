@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">PolicyTracker</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Username</string>
+    <!--<string name="nav_header_subtitle">android.studio@android.com</string>-->
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="select_company_type">
+        <item>Select Company Type*</item>
+        <item>Life</item>
+        <item>General</item>
+        <item>Health</item>
+    </string-array>
+
+
+    <string-array name="select_state">
+        <item>Select State*</item>
+        <item>Andhra Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+    </string-array>
+
+    <string-array name="select_company">
+        <item>Select Company *</item>
+        <item>Acro General Insurance Co Ltd</item>
+        <item>Aditya Birla Health Insurance Co Limited</item>
+        <item>Appollo Munich Health Insurance Company</item>
+    </string-array>
+</resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activties.SignupActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="15dp"
+                android:text="Are You a:"/>
+
+            <RadioButton
+                android:id="@+id/radioManager_signupactivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manager"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radioagent_Signupactivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agent" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/companytype_singupactivity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"/>
+    <Spinner
+        android:id="@+id/selectcompany_singupactivity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/firstname_signupactivity_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:hint="FirstName*"/>
+    <EditText
+        android:id="@+id/lastname_signupactivity_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:hint="LastName*"/>
+    <EditText
+        android:id="@+id/email_signupactivity_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:hint="Email*"/>
+    <EditText
+        android:id="@+id/Phone_signupactivity_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:hint="Phone*"/>
+    <EditText
+        android:id="@+id/loginname_signupactivity_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:hint="Login Name*"/>
+    <EditText
+        android:id="@+id/password_signupactivity_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:hint="Password*"/>
+
+    <Button
+        android:id="@+id/register_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAppTheme"
+        android:textColor="@color/colorBlack"
+        android:text="Register"/>
+
+</LinearLayout>
