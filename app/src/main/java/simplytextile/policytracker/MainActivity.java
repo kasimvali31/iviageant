@@ -23,6 +23,7 @@ import simplytextile.policytracker.activties.NotificationActivity;
 import simplytextile.policytracker.activties.PoliciesActivity;
 import simplytextile.policytracker.activties.UpdateUserProfileActivity;
 import simplytextile.policytracker.activties.UserProfileActivity;
+import simplytextile.policytracker.models.Customer;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -137,7 +138,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         else if (id == R.id.customers)
         {
-
+            Intent customer =new Intent(MainActivity.this, CustomerActivity.class);
+            startActivity(customer);
 
         }
         else if (id == R.id.notifications)

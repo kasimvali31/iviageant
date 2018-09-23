@@ -8,6 +8,7 @@ package simplytextile.policytracker.apis;
         import retrofit2.http.Field;
         import retrofit2.http.FormUrlEncoded;
         import retrofit2.http.GET;
+        import retrofit2.http.Header;
         import retrofit2.http.Headers;
         import retrofit2.http.POST;
         import simplytextile.policytracker.companyresponse.CompanyList;
@@ -39,21 +40,20 @@ public interface ApiService
 
 
 
-    @Headers({"Content-Type:application/json"
-            ,"app_sid:37a559d3bcd211e8be14aa3a52b410b4"})
+    @Headers("Content-Type:application/json")
     @GET("api/customers")
-    Call<CustomerResponse> getCustomers();
+    Call<CustomerResponse> getCustomers(@Header("app_sid") String S_id);
 
 
-    @Headers({"Content-Type:application/json"
-            ,"app_sid:37a559d3bcd211e8be14aa3a52b410b4"})
+    @Headers("Content-Type:application/json"
+           )
     @GET("api/agents/")
-    Call<AgentsResponse> getAgents();
-
+    Call<AgentsResponse> getAgents(@Header("app_sid") String S_id );
+//@Header("app_sid") String sessionid
 
     //api/policies
     @Headers({"Content-Type:application/json"
-            ,"app_sid:37a559d3bcd211e8be14aa3a52b410b4"})
+            ,"app_sid:b8810e33bda611e8be14aa3a52b410b4"})
     @GET("api/policies")
     Call<PoliciesResponse> getPolicies();
 

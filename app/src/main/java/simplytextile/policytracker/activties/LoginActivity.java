@@ -2,7 +2,10 @@ package simplytextile.policytracker.activties;
 
 import android.app.ActionBar;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,11 +24,17 @@ import simplytextile.policytracker.responses.loginresponses.LoginResponse;
 
 public class LoginActivity extends AppCompatActivity
 {
+
     TextView signupText;
+
+
+    SharedPreferences mPrefs;
+    String Sid;
     EditText username,upassword;
     Button loginbutton;
     ProgressDialog pDialog;
     String Password,Username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -33,6 +42,8 @@ public class LoginActivity extends AppCompatActivity
         setContentView(R.layout.login_activity);
         initViews();
         ActionBar actionBar = getActionBar();
+
+
     }
 
     private void initViews()
@@ -66,6 +77,14 @@ public class LoginActivity extends AppCompatActivity
             }
         });
 
+    }
+
+    public void Save(View view)
+    {
+
+//        SharedPreferences.Editor editor = sharedpreferences.edit();
+//        editor.putString(Seesionid, Sid);
+//        editor.commit();
     }
 
     private void intialization()
@@ -113,12 +132,18 @@ public class LoginActivity extends AppCompatActivity
                       username.setText(" ");
                       upassword.setText(" ");
                       Toast.makeText(LoginActivity.this, "" + response.body().getMessage(), Toast.LENGTH_LONG).show();
-                    Toast.makeText(LoginActivity.this, "" + response.body().getStatuscode(), Toast.LENGTH_LONG).show();
-                    Toast.makeText(LoginActivity.this, "" + response.body().getData().getSession().getSubscriber().getLast_name(), Toast.LENGTH_LONG).show();
-                    Toast.makeText(LoginActivity.this, "" + response.body().getData().getSession().getSubscriber().getLast_name(), Toast.LENGTH_LONG).show();
+                      Toast.makeText(LoginActivity.this, "" + response.body().getStatuscode(), Toast.LENGTH_LONG).show();
+                      Toast.makeText(LoginActivity.this, "" + response.body().getData().getSession().getSubscriber().getLast_name(), Toast.LENGTH_LONG).show();
+                      Toast.makeText(LoginActivity.this, "" + response.body().getData().getSession().getSubscriber().getLast_name(), Toast.LENGTH_LONG).show();
 
 
                       String FirstName=response.body().getData().getSession().getSubscriber().getFirst_name();
+                      Sid=response.body().getData().getSession().getId();
+                      mPrefs = getSharedPreferences("IDvalue", 0);
+                      SharedPreferences.Editor editor = mPrefs.edit();
+                      editor.putString("key",Sid );
+                      editor.commit();
+                      Toast.makeText(LoginActivity.this, "" +Sid, Toast.LENGTH_LONG).show();
                       String LastName=response.body().getData().getSession().getSubscriber().getLast_name();
                       String Email=response.body().getData().getSession().getSubscriber().getAddress().getEmail1();
                       String Phone=response.body().getData().getSession().getSubscriber().getAddress().getPhone1();
@@ -135,26 +160,18 @@ public class LoginActivity extends AppCompatActivity
                       userprofile.putString("city",City);
                       userprofile.putString("postalcode",PostalCode);
                       userprofile.putString("adhaarcard",AdhaarNaumber);
-                      Intent a=new Intent(LoginActivity.this,UserProfileActivity.class);
-                      a.putExtras(userprofile);
+
+                      Intent a=new Intent(LoginActivity.this,MainActivity.class);
+
                       startActivity(a);
-                      finish();
+                     // finish();
 //                      Intent profile=new Intent(LoginActivity.this,UserProfileActivity.class);
 //                      profile.putExtra("ProfileFirstName",FirstName);
 //                      profile.putExtra("ProfileLastName",LastName);
 
 
 
-
-
-
-
-
-
-
-
-
-//                    Intent mainactivity=new Intent(LoginActivity.this, MainActivity.class);
+//        Intent mainactivity=new Intent(LoginActivity.this, MainActivity.class);
 //                    startActivity(mainactivity);
                    }
               else
@@ -169,6 +186,8 @@ public class LoginActivity extends AppCompatActivity
             public void onFailure(Call<LoginResponse> call, Throwable t)
             {
                      Toast.makeText(LoginActivity.this,"Something went Wrong",Toast.LENGTH_LONG).show();
+                pDialog.dismiss();
+
 
             }
         });
