@@ -11,13 +11,24 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.google.gson.JsonObject;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import simplytextile.policytracker.MainActivity;
 import simplytextile.policytracker.R;
+import simplytextile.policytracker.Utills;
+import simplytextile.policytracker.VolleyCallback;
 
 public class SignupActivity extends AppCompatActivity
 {
     EditText input_firstname,input_lastname,input_email,input_phone,input_loginanme,input_password;
+    String FirstName,LastName,Email,Phone,LoginName,Password;
     RadioGroup radioGroup;
     RadioButton rb_agent,rb_manager;
     Spinner companytype,selectcompany;
@@ -48,19 +59,19 @@ public class SignupActivity extends AppCompatActivity
         input_loginanme=(EditText)findViewById(R.id.loginname_signupactivity_input);
         input_password=(EditText)findViewById(R.id.password_signupactivity_input);
         register=(Button)findViewById(R.id.register_signup);
-
-
-
         register.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Intent  dasboard=new Intent(SignupActivity.this,MainActivity.class);
-                startActivity(dasboard);
-
+              intialization();
             }
         });
+
+
+
+
+
 
         selectcompany=(Spinner)findViewById(R.id.selectcompany_singupactivity);
         ArrayAdapter<CharSequence> selectcompanyadapter = ArrayAdapter.createFromResource(this, R.array.select_company, android.R.layout.simple_spinner_item);
@@ -82,6 +93,8 @@ public class SignupActivity extends AppCompatActivity
             {
                 selectcompany.setVisibility(View.INVISIBLE);
                 companytype.setVisibility(View.INVISIBLE);
+
+
             }
         });
         rb_manager.setOnClickListener(new View.OnClickListener()
@@ -92,7 +105,118 @@ public class SignupActivity extends AppCompatActivity
                 selectcompany.setVisibility(View.VISIBLE);
                 companytype.setVisibility(View.VISIBLE);
 
+
             }
         });
+    }
+
+    private void intialization()
+    {
+
+        FirstName=input_firstname.getText().toString().trim();
+        LastName=input_lastname.getText().toString().trim();
+        Email=input_email.getText().toString().trim();
+        Phone=input_phone.getText().toString().trim();
+        LoginName=input_loginanme.getText().toString().trim();
+        Password=input_password.getText().toString().trim();
+        if (FirstName.isEmpty())
+        {
+            input_firstname.requestFocus();
+            input_firstname.setError("Enter FirstName");
+        }
+
+        else if(LastName.isEmpty())
+        {
+            input_lastname.requestFocus();
+            input_lastname.setError("Enter LastName");
+        }
+        else if(Email.isEmpty())
+        {
+            input_email.requestFocus();
+            input_email.setError("Enter email");
+        }
+        else if (Phone.isEmpty())
+        {
+            input_phone.requestFocus();
+            input_phone.setError("Enter Phone");
+        }
+        else if(LoginName.isEmpty())
+        {
+            input_loginanme.requestFocus();
+            input_loginanme.setError("Enter Login Name");
+        }
+        else if (Password.isEmpty())
+        {
+            input_password.requestFocus();
+            input_password.setError("Enter Password");
+        }
+
+        else
+        {
+           signupRequest();
+        }
+    }
+
+
+
+
+    private void signupRequest()
+    {
+
+        JSONObject jsonObject=new JSONObject();
+        JSONObject jsonObjectSub=new JSONObject();
+        try
+        {
+            jsonObjectSub.put("id",0);
+            jsonObjectSub.put("type_id",6500);
+            jsonObjectSub.put("business_name","");
+            jsonObjectSub.put("first_name",FirstName);
+            jsonObjectSub.put("last_name",LastName);
+            jsonObjectSub.put("aadhar_number","");
+            jsonObjectSub.put("govt_id_number","");
+            jsonObjectSub.put("irdai_number","");
+
+            JSONObject jsonObjectAdd=new JSONObject();
+            jsonObjectAdd.put("address1","");
+            jsonObjectAdd.put("address2","");
+            jsonObjectAdd.put("address3","");
+            jsonObjectAdd.put("city","");
+            jsonObjectAdd.put("state","");
+            jsonObjectAdd.put("zip","");
+            jsonObjectAdd.put("email1",Email);
+            jsonObjectAdd.put("phone1",Phone);
+            jsonObjectAdd.put("email2","");
+            jsonObjectAdd.put("phone2","");
+            jsonObjectSub.put("address",jsonObjectAdd);
+            JSONObject jsonObjectUser=new JSONObject();
+            jsonObjectUser.put("login_name",LoginName);
+            jsonObjectUser.put("password",Password);
+            jsonObjectSub.put("user",jsonObjectUser);
+            JSONArray comArray =new JSONArray();
+            jsonObjectSub.put("company_list",comArray);
+            jsonObject.put("subscriber",jsonObjectSub);
+
+            Utills.getVolleyResponseJson(SignupActivity.this, Request.Method.POST, "http://dev.simplytextile.com:9081/api/subscribers", jsonObject, new VolleyCallback() {
+                @Override
+                public void onSuccessResponse(String result)
+                {
+
+
+                    Toast.makeText(SignupActivity.this, ""+result, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignupActivity.this, ""+result, Toast.LENGTH_SHORT).show();
+
+
+
+                }
+            });
+
+
+
+        }
+        catch (JSONException e)
+        {
+                   e.printStackTrace();
+        }
+
     }
 }
