@@ -164,6 +164,7 @@ public class LoginActivity extends AppCompatActivity
                       Intent a=new Intent(LoginActivity.this,MainActivity.class);
 
                       startActivity(a);
+
                      // finish();
 //                      Intent profile=new Intent(LoginActivity.this,UserProfileActivity.class);
 //                      profile.putExtra("ProfileFirstName",FirstName);

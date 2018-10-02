@@ -200,10 +200,19 @@ public class SignupActivity extends AppCompatActivity
                 @Override
                 public void onSuccessResponse(String result)
                 {
+                    try
+                    {
+                        JSONObject jb =new JSONObject(result);
+                        String   msg=jb.getString("message");
+                        Toast.makeText(SignupActivity.this, ""+msg, Toast.LENGTH_SHORT).show();
 
-
+                    } catch (JSONException e)
+                    {
+                        e.printStackTrace();
+                    }
                     Toast.makeText(SignupActivity.this, ""+result, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(SignupActivity.this, ""+result, Toast.LENGTH_SHORT).show();
+                           Intent mainactivity =new Intent(SignupActivity.this,LoginActivity.class);
+                           startActivity(mainactivity);
 
 
 
