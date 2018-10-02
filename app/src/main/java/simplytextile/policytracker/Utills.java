@@ -15,6 +15,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Utills
@@ -67,11 +68,17 @@ public class Utills
 
         }
 
-        ){
+        )
+
+        {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError
             {
-                return super.getHeaders();
+
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put("User-Agent", "Nintendo Gameboy");
+                params.put("Accept-Language", "fr");
+                return params;
             }
         });
 

@@ -9,17 +9,21 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import simplytextile.policytracker.R;
+import simplytextile.policytracker.activties.CompaniesActivity;
 import simplytextile.policytracker.companyresponse.CompanyList;
 
 public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.ViewHolder>
 {
     ArrayList<CompanyList> company_list;
-    Context context;
+    private Context context;
+    ArrayAdapter aa;
+
 
     public CompanyAdapter(ArrayList<CompanyList> company_list,Context context)
     {
@@ -38,8 +42,16 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i)
     {
-//viewHolder.companyName.setText(company_list.get(i).getBusiness_name());
 
+//viewHolder.companyName.setText(company_list.get(i).getBusiness_name());
+//        int k=company_list.size();
+//        viewHolder.a1=new String[k];
+//        for(int s=0;s<k;s++)
+//        {
+//            a1[i]=company_list.get(s).getPolicy_type().getName();        //response.body().getFoodItemCategories().get(i).getCategory();
+//        }
+//        aa=new ArrayAdapter(context,android.R.layout.simple_spinner_item,a1);
+//        viewHolder.selectcompany.setAdapter(aa);
         viewHolder.companyName.setText(company_list.get(i).getPolicy_type().getId().toString());
         viewHolder.Name.setText(company_list.get(i).getPolicy_type().getName());
 
@@ -55,16 +67,13 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.ViewHold
     {
         TextView companyName,Name;
         Spinner selectcompany;
+        String a1[];
         public ViewHolder(@NonNull View itemView)
         {
             super(itemView);
             companyName=(TextView)itemView.findViewById(R.id.companyname);
             Name=(TextView)itemView.findViewById(R.id.name);
             selectcompany=(Spinner)itemView.findViewById(R.id.selectcompany_singupactivity);
-
-
-
-
         }
     }
 }

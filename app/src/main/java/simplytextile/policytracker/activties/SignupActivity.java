@@ -105,7 +105,6 @@ public class SignupActivity extends AppCompatActivity
                 selectcompany.setVisibility(View.VISIBLE);
                 companytype.setVisibility(View.VISIBLE);
 
-
             }
         });
     }

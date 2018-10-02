@@ -1,21 +1,30 @@
 package simplytextile.policytracker.activties;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import simplytextile.policytracker.MainActivity;
 import simplytextile.policytracker.R;
 import simplytextile.policytracker.adapters.CompanyAdapter;
 import simplytextile.policytracker.apis.ApiClient;
@@ -28,12 +37,13 @@ public class CompaniesActivity extends AppCompatActivity
 {
 
     ImageView addcompany;
-
+    String a1[];
 
     public RecyclerView recyclerView;
     public ArrayList<CompanyList> company_list;
 
     Context context;
+    Spinner spinner;
 
 
 
@@ -43,6 +53,7 @@ public class CompaniesActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.companies_activity);
         recyclerView = (RecyclerView)findViewById(R.id.rc_view);
+        spinner=(Spinner)findViewById(R.id.spinner);
         getCompany();
 
 //
@@ -63,15 +74,27 @@ public class CompaniesActivity extends AppCompatActivity
                 compres.getMessage();
                 Data data=compres.getData();
                 data.getTotalrecords();
+
+
+
                 company_list = new ArrayList<CompanyList>((compres.getData().getCompany_list()));
-                CompanyAdapter companyAdapter = new CompanyAdapter(company_list,context);
-                LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-                recyclerView.setLayoutManager(layoutManager);
-                recyclerView.setHasFixedSize(true);
-                Toast.makeText(CompaniesActivity.this, "Success"+company_list, Toast.LENGTH_LONG).show();
-                recyclerView.setAdapter(companyAdapter);
+//                CompanyAdapter companyAdapter = new CompanyAdapter(response.body().getData().getCompany_list(),context);
+//                LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+//                recyclerView.setLayoutManager(layoutManager);
+//                recyclerView.setHasFixedSize(true);
+//                recyclerView.setAdapter(companyAdapter);
 
+                int k=company_list.size();
+                a1=new String[k];
+                for(int i=0;i<k;i++)
+                {
 
+                    a1[i]=company_list.get(i).getPolicy_type().getName();
+
+                }
+                
+//                ArrayAdapter aa=new ArrayAdapter(CompaniesActivity.this,android.R.layout.simple_spinner_item,a1);
+//                spinner.setAdapter(aa);
 
             }
 
@@ -82,6 +105,7 @@ public class CompaniesActivity extends AppCompatActivity
             }
         });
     }
-
-
 }
+
+
+
