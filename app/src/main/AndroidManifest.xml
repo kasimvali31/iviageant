@@ -18,15 +18,15 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activties.SignupActivity" >
+
+        </activity>
+
+        <activity android:name=".activties.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity android:name=".activties.LoginActivity">
-
         </activity>
         <activity android:name=".activties.HomeActivity" >
 

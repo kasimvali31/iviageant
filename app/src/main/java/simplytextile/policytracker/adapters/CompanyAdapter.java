@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -37,7 +38,11 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i)
     {
-viewHolder.companyName.setText(company_list.get(i).getBusiness_name());
+//viewHolder.companyName.setText(company_list.get(i).getBusiness_name());
+
+        viewHolder.companyName.setText(company_list.get(i).getPolicy_type().getId().toString());
+        viewHolder.Name.setText(company_list.get(i).getPolicy_type().getName());
+
     }
 
     @Override
@@ -48,11 +53,16 @@ viewHolder.companyName.setText(company_list.get(i).getBusiness_name());
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {
-        TextView companyName;
+        TextView companyName,Name;
+        Spinner selectcompany;
         public ViewHolder(@NonNull View itemView)
         {
             super(itemView);
             companyName=(TextView)itemView.findViewById(R.id.companyname);
+            Name=(TextView)itemView.findViewById(R.id.name);
+            selectcompany=(Spinner)itemView.findViewById(R.id.selectcompany_singupactivity);
+
+
 
 
         }

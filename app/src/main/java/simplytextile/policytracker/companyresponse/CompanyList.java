@@ -129,7 +129,7 @@ public class CompanyList
         this.more = more;
     }
 
-    public PolicyType getPolicy_type() {
+    public  PolicyType getPolicy_type() {
         return policy_type;
     }
 

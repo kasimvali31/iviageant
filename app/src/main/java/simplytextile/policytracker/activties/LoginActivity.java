@@ -132,11 +132,6 @@ public class LoginActivity extends AppCompatActivity
                       username.setText(" ");
                       upassword.setText(" ");
                       Toast.makeText(LoginActivity.this, "" + response.body().getMessage(), Toast.LENGTH_LONG).show();
-                      Toast.makeText(LoginActivity.this, "" + response.body().getStatuscode(), Toast.LENGTH_LONG).show();
-                      Toast.makeText(LoginActivity.this, "" + response.body().getData().getSession().getSubscriber().getLast_name(), Toast.LENGTH_LONG).show();
-                      Toast.makeText(LoginActivity.this, "" + response.body().getData().getSession().getSubscriber().getLast_name(), Toast.LENGTH_LONG).show();
-
-
                       String FirstName=response.body().getData().getSession().getSubscriber().getFirst_name();
                       Sid=response.body().getData().getSession().getId();
                       mPrefs = getSharedPreferences("IDvalue", 0);
@@ -165,15 +160,7 @@ public class LoginActivity extends AppCompatActivity
 
                       startActivity(a);
 
-                     // finish();
-//                      Intent profile=new Intent(LoginActivity.this,UserProfileActivity.class);
-//                      profile.putExtra("ProfileFirstName",FirstName);
-//                      profile.putExtra("ProfileLastName",LastName);
 
-
-
-//        Intent mainactivity=new Intent(LoginActivity.this, MainActivity.class);
-//                    startActivity(mainactivity);
                    }
               else
                   {
