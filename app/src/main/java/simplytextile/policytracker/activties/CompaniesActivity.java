@@ -92,7 +92,7 @@ public class CompaniesActivity extends AppCompatActivity
                     a1[i]=company_list.get(i).getPolicy_type().getName();
 
                 }
-                
+
 //                ArrayAdapter aa=new ArrayAdapter(CompaniesActivity.this,android.R.layout.simple_spinner_item,a1);
 //                spinner.setAdapter(aa);
 
