@@ -118,6 +118,14 @@ public class CompaniesActivity extends AppCompatActivity
                 int k=company_list.size();
 
                 a1=new String[k];
+                for (int i = 0; i < k; i++)
+                {
+                    for (int j = i + 1; j < k; j++)
+                    {
+                        if (a1[i] == a1[j])
+                            Toast.makeText(CompaniesActivity.this, ""+a1[i] , Toast.LENGTH_SHORT).show();
+                    }
+                }
 
 
 //                ArrayAdapter aa=new ArrayAdapter(CompaniesActivity.this,android.R.layout.simple_spinner_item,a1);
@@ -138,7 +146,8 @@ public class CompaniesActivity extends AppCompatActivity
         if(length==0 || length==1) return length;
         int i=1;
         for(int j=1; j<length; j++){
-            if(!A[j].equals(A[j-1])){
+            if(!A[j].equals(A[j-1]))
+            {
                 A[i]=A[j];
                 i++;
             }
@@ -146,7 +155,6 @@ public class CompaniesActivity extends AppCompatActivity
         if(i<length) A[i]=null;
         return i;
     }
-
 }
 
 

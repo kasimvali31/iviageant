@@ -1,65 +1,117 @@
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:text="id"
         android:id="@+id/agents_id_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="id"
+        android:textColor="#d2121111"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:fontFamily="serif"
+        android:layout_margin="2dp"/>
     <TextView
         android:text="lastname"
         android:id="@+id/agents_id_lastname"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#d2121111"
+        android:fontFamily="serif"
+        android:layout_margin="2dp"/>
 
     <TextView
         android:text="business name"
         android:id="@+id/agents_id_business_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#d2121111"
+        android:fontFamily="serif"
+        android:layout_margin="2dp"
+        />
     <TextView
         android:text="status id"
         android:id="@+id/agents_id_status"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#d2121111"
+        android:layout_margin="2dp"
+        android:fontFamily="serif"/>
     <TextView
         android:text="govt id"
         android:id="@+id/agents_id_govt_details"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#d2121111"
+        android:layout_margin="2dp"
+        android:fontFamily="serif"/>
     <TextView
         android:text="Crated on"
         android:id="@+id/agents_id_cretaed_on"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#d2121111"
+        android:layout_margin="2dp"
+        android:fontFamily="serif"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
+
         android:weightSum="2">
         <TextView
             android:text="Address"
             android:gravity="center"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"/>
+            android:layout_weight="0.5"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="#d2121111"
+            android:fontFamily="serif"/>
         <TextView
             android:text="id"
             android:id="@+id/agents_id_address"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1.5"/>
+            android:gravity="center"
+            android:layout_weight="1.5"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="#d2121111"
+            android:fontFamily="serif"/>
     </LinearLayout>
     <TextView
         android:text="phone"
         android:id="@+id/agents_id_phone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#d2121111"
+        android:layout_margin="2dp"
+        android:fontFamily="serif"/>
     <TextView
         android:text="Email"
         android:id="@+id/agents_id_email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#d2121111"
+        android:layout_margin="2dp"
+        android:fontFamily="serif"/>
 </LinearLayout>
