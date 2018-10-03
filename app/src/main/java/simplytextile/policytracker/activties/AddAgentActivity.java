@@ -11,7 +11,9 @@ public class AddAgentActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_agent_activity);
+
     }
 }
