@@ -1,6 +1,6 @@
 package simplytextile.policytracker.apis;
 
-        import java.util.List;
+import java.util.List;
 
         import retrofit2.Call;
         import retrofit2.Callback;
@@ -11,7 +11,8 @@ package simplytextile.policytracker.apis;
         import retrofit2.http.Header;
         import retrofit2.http.Headers;
         import retrofit2.http.POST;
-        import simplytextile.policytracker.companyresponse.CompanyList;
+import simplytextile.policytracker.NotificationResponse.Notresponse;
+import simplytextile.policytracker.companyresponse.CompanyList;
         import simplytextile.policytracker.companyresponse.Compres;
         import simplytextile.policytracker.companyresponse.Data;
         import simplytextile.policytracker.response.AgentsResponse;
@@ -45,17 +46,19 @@ public interface ApiService
     Call<CustomerResponse> getCustomers(@Header("app_sid") String S_id);
 
 
-    @Headers("Content-Type:application/json"
-           )
+    @Headers("Content-Type:application/json")
     @GET("api/agents/")
     Call<AgentsResponse> getAgents(@Header("app_sid") String S_id );
 //@Header("app_sid") String sessionid
 
     //api/policies
-    @Headers({"Content-Type:application/json"
-            ,"app_sid:b8810e33bda611e8be14aa3a52b410b4"})
+    @Headers("Content-Type:application/json")
     @GET("api/policies")
-    Call<PoliciesResponse> getPolicies();
+    Call<PoliciesResponse> getPolicies(@Header("app_sid") String S_id );
+
+    @Headers("Content-Type:application/json")
+    @GET("/api/notifications")
+    Call<Notresponse> getNotification(@Header("app_sid") String S_id );
 
 
 

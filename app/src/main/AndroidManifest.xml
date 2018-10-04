@@ -19,20 +19,21 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activties.SignupActivity" >
 
+
         </activity>
 
         <activity android:name=".activties.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".activties.HomeActivity" >
 
         </activity>
         <activity android:name=".activties.CustomerActivity" />
         <activity android:name=".activties.CompaniesActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".activties.PoliciesActivity" />
