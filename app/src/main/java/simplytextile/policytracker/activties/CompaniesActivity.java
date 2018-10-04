@@ -40,8 +40,8 @@ public class CompaniesActivity extends AppCompatActivity
 {
 
     ImageView addcompany;
-    String a1[];
-
+    String a1[],ss;
+    int count=0;
     public RecyclerView recyclerView;
     public ArrayList<CompanyList> company_list;
 
@@ -118,13 +118,14 @@ public class CompaniesActivity extends AppCompatActivity
                 int k=company_list.size();
 
                 a1=new String[k];
-                for (int i = 0; i < a1.length-1; i++)
+                for (int i = 0; i < a1.length - 1; i++)
                 {
-                    for (int j = i+1; j < a1.length; j++)
+                    for (int j = i + 1; j < a1.length; j++)
                     {
-                        if ((a1[i] == a1[j]) && (i != j))
+                        //12
+                        if (a1[i].equals(a1[j]))
                         {
-                            Toast.makeText(CompaniesActivity.this, ""+a1[j], Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CompaniesActivity.this, ""+a1[i], Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
