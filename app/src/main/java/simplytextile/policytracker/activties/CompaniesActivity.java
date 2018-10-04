@@ -1,6 +1,7 @@
 package simplytextile.policytracker.activties;
 
 import android.content.Context;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,8 +22,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,6 +45,9 @@ public class CompaniesActivity extends AppCompatActivity
 
     ImageView addcompany;
     String a1[];
+    ArrayList ll=new ArrayList();
+    int count=0;
+    Set list= new HashSet();
 
     public RecyclerView recyclerView;
     public ArrayList<CompanyList> company_list;
@@ -82,29 +89,30 @@ public class CompaniesActivity extends AppCompatActivity
 
 
                 company_list = new ArrayList<CompanyList>((compres.getData().getCompany_list()));
-                String[] spinnerArray = new String[company_list.size()];
-                HashMap<Integer,String> spinnerMap = new HashMap<Integer, String>();
-                for (int i = 0; i < company_list.size(); i++)
-                {
-                    spinnerMap.put(i, String.valueOf(company_list.get(i).getPolicy_type().getId()));
-                    spinnerArray[i] = company_list.get(i).getPolicy_type().getName();
-                   //Arrays.sort(new String[]{spinnerArray[i]});
-
-                   String[]cs=new String[]{spinnerArray[i]};
-                   Arrays.sort(cs);
-                   int n=removeDuplicates(cs);
-                    for(int j = 0; j<n; j++){
-                        System.out.println(cs[j]);
-                        Toast.makeText(CompaniesActivity.this, ""+cs[j], Toast.LENGTH_SHORT).show();
-                        Set<String> unique = new HashSet<String>(Collections.singleton(cs[j]));
-
-                        for (String word : unique)
-                            Toast.makeText(CompaniesActivity.this, ""+word, Toast.LENGTH_SHORT).show();
-
-
-                    }
-
-                }
+//                String[] spinnerArray = new String[company_list.size()];
+//                HashMap<Integer,String> spinnerMap = new HashMap<Integer, String>();
+//                for (int i = 0; i < company_list.size(); i++)
+//                {
+//                    spinnerMap.put(i, String.valueOf(company_list.get(i).getPolicy_type().getId()));
+//                    spinnerArray[i] = company_list.get(i).getPolicy_type().getName();
+//                   //Arrays.sort(new String[]{spinnerArray[i]});
+//
+//                   String[]cs=new String[]{spinnerArray[i]};
+//                   Arrays.sort(cs);
+//                   int n=removeDuplicates(cs);
+//                    for(int j = 0; j<n; j++)
+//                    {
+//                        System.out.println(cs[j]);
+//                        //Toast.makeText(CompaniesActivity.this, ""+cs[j], Toast.LENGTH_SHORT).show();
+//                        Set<String> unique = new HashSet<String>(Collections.singleton(cs[j]));
+//
+//                        for (String word : unique)
+//                            Toast.makeText(CompaniesActivity.this, ""+word, Toast.LENGTH_SHORT).show();
+//
+//
+//                    }
+//
+//                }
 
 
 
@@ -119,63 +127,18 @@ public class CompaniesActivity extends AppCompatActivity
 
                 a1=new String[k];
 
-//                for(int i=0;i<k;i++)
-//                {
+                for(int i=0;i<k;i++)
+                {
+                    if (company_list.get(i).getPolicy_type().getName().toString().equals("Health"))
+                    {
 //
-//                    a1[i]=company_list.get(i).getPolicy_type().getName();
-//
-//
-//                    if (a1[i].equals("Health")||a1[i].equals("General")||a1[i].equals("Life Insurance"))
-//                    {
-//                        a1[i]= String.valueOf(company_list.get(i).getPolicy_type().getId());
-//                      //  Toast.makeText(CompaniesActivity.this, "Healt", Toast.LENGTH_SHORT).show();
-//                    }
-////                    else if(a1[i].equals("Life Insurance"))
-////                    {
-////                        Toast.makeText(CompaniesActivity.this, "Life Insurace", Toast.LENGTH_SHORT).show();
-////                    }
-////                    else if (a1[i].equals("General"))
-////                    {
-////                        Toast.makeText(CompaniesActivity.this, "Generl", Toast.LENGTH_SHORT).show();
-////                    }
-////
-////
-//////                    if(a1[i].equals("Health"))
-//////                    {
-//////                        Toast.makeText(CompaniesActivity.this, "gotiti", Toast.LENGTH_SHORT).show();
-//////
-//////                    }
-//////                    else
-//////                    {
-//////                        Toast.makeText(CompaniesActivity.this, "gotiti", Toast.LENGTH_SHORT).show();
-//////
-//////                    }
-////
-////
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//                   // Toast.makeText(CompaniesActivity.this, "not health", Toast.LENGTH_SHORT).show();
-//
-//
-//
-//
-////                    if(a1.equals("Life"));
-////                    {
-////                        int id=company_list.get(i).getPolicy_type().getId();
-////                    }
-////
-//
-//                }
-                
-//                ArrayAdapter aa=new ArrayAdapter(CompaniesActivity.this,android.R.layout.simple_spinner_item,a1);
-//                spinner.setAdapter(aa);
+                        ll.add(company_list.get(i).getBusiness_name());
+
+                    }
+
+                }
+                ArrayAdapter aa=new ArrayAdapter(CompaniesActivity.this,android.R.layout.simple_spinner_item,ll);
+                spinner.setAdapter(aa);
 
             }
 
@@ -187,7 +150,8 @@ public class CompaniesActivity extends AppCompatActivity
         });
     }
 
-    public static int removeDuplicates(String[] A) {
+    public static int removeDuplicates(String[] A)
+    {
         int length=A.length;
         if(length==0 || length==1) return length;
         int i=1;

@@ -76,8 +76,8 @@ public class Utills
             {
 
                 Map<String, String>  params = new HashMap<String, String>();
-                params.put("User-Agent", "Nintendo Gameboy");
-                params.put("Accept-Language", "fr");
+                params.put("Content-Type", "application/json");
+                params.put("app_sid", "665b4aa5bd7d11e8be14aa3a52b410b4");
                 return params;
             }
         });
