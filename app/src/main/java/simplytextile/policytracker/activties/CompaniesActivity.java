@@ -118,12 +118,14 @@ public class CompaniesActivity extends AppCompatActivity
                 int k=company_list.size();
 
                 a1=new String[k];
-                for (int i = 0; i < k; i++)
+                for (int i = 0; i < a1.length-1; i++)
                 {
-                    for (int j = i + 1; j < k; j++)
+                    for (int j = i+1; j < a1.length; j++)
                     {
-                        if (a1[i] == a1[j])
-                            Toast.makeText(CompaniesActivity.this, ""+a1[i] , Toast.LENGTH_SHORT).show();
+                        if ((a1[i] == a1[j]) && (i != j))
+                        {
+                            Toast.makeText(CompaniesActivity.this, ""+a1[j], Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
 
