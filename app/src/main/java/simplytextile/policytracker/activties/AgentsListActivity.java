@@ -1,11 +1,15 @@
 package simplytextile.policytracker.activties;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import retrofit2.Call;
@@ -26,7 +30,9 @@ public class AgentsListActivity extends AppCompatActivity
 
     LinearLayoutManager llm;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agents_list);
         SharedPreferences mPrefs = getSharedPreferences("IDvalue",0);
@@ -44,20 +50,43 @@ public class AgentsListActivity extends AppCompatActivity
                     AgentsListAdapter adapter=new AgentsListAdapter(response.body().getData().getAgentList(),AgentsListActivity.this);
                     agents_list_recycler.setAdapter(adapter);
                     agents_list_recycler.setLayoutManager(llm);
-
                 }
                 else
                 {
                     Toast.makeText(AgentsListActivity.this, "from else"+response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onFailure(Call<AgentsResponse> call, Throwable t)
             {
                 Toast.makeText(AgentsListActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
-
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                // app icon in action bar clicked; goto parent activity.
+               onBackPressed();
+                return true;
+            case R.id.add_agents:
+            {
+                startActivity(new Intent(this,AddAgentActivity.class));
+            }
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

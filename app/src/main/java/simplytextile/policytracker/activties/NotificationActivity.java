@@ -5,7 +5,8 @@ import android.os.Bundle;
 
 import simplytextile.policytracker.R;
 
-public class NotificationActivity extends AppCompatActivity {
+public class NotificationActivity extends AppCompatActivity
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

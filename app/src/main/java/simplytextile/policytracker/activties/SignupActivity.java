@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,10 +21,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import simplytextile.policytracker.MainActivity;
 import simplytextile.policytracker.R;
 import simplytextile.policytracker.Utills;
 import simplytextile.policytracker.VolleyCallback;
+import simplytextile.policytracker.apis.ApiClient;
+import simplytextile.policytracker.apis.ApiService;
+import simplytextile.policytracker.companyresponse.Compres;
 
 public class SignupActivity extends AppCompatActivity
 {
@@ -33,7 +42,10 @@ public class SignupActivity extends AppCompatActivity
     RadioButton rb_agent,rb_manager;
     Spinner companytype,selectcompany;
     Button register;
-
+    String a1[];
+    String cname;
+    int k;
+    ArrayList ll=new ArrayList();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -58,6 +70,9 @@ public class SignupActivity extends AppCompatActivity
         input_phone=(EditText)findViewById(R.id.Phone_signupactivity_input);
         input_loginanme=(EditText)findViewById(R.id.loginname_signupactivity_input);
         input_password=(EditText)findViewById(R.id.password_signupactivity_input);
+        selectcompany=(Spinner)findViewById(R.id.selectcompany_singupactivity);
+        companytype=(Spinner)findViewById(R.id.companytype_singupactivity);
+
         register=(Button)findViewById(R.id.register_signup);
         register.setOnClickListener(new View.OnClickListener()
         {
@@ -71,17 +86,93 @@ public class SignupActivity extends AppCompatActivity
 
 
 
+        ApiService service = ApiClient.getClient().create(ApiService.class);
+        Call<Compres> call = service.getCompanies();
+        call.enqueue(new Callback<Compres>()
+        {
+            @Override
+            public void onResponse(Call<Compres> call, final Response<Compres> response)
+            {
+                 k=response.body().getData().getCompany_list().size();
+                a1=new String[k];
+                for(int i=0;i<k;i++)
+                {
+
+                    a1[i]=response.body().getData().getCompany_list().get(i).getPolicy_type().getName();
+//                    if (response.body().getData().getCompany_list().get(i).getPolicy_type().getName().toString().equals("Health"))
+//                    {
+//                        ll.add(company_list.get(i).getBusiness_name());
+//
+//                    }
+
+                }
+                ArrayAdapter aa=new ArrayAdapter(SignupActivity.this,android.R.layout.simple_spinner_dropdown_item,a1);
+                companytype.setAdapter(aa);
+                companytype.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+                {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+                    {
+                         cname=parent.getItemAtPosition(position).toString().trim();
+                        if (cname.equals("General"))
+                        {
+
+                            for (int j=0;j<k;j++)
+                            {
+                                if (response.body().getData().getCompany_list().get(j).getPolicy_type().getName().equals("General"))
+                                {
+                                    ll.add(response.body().getData().getCompany_list().get(j).getBusiness_name());
+                                }
+                            }
+                        }
+                        else if (cname.equals("Health"))
+                        {
+                            for (int j=0;j<k;j++)
+                            {
+                                if (response.body().getData().getCompany_list().get(j).getPolicy_type().getName().equals("Health"))
+                                {
+                                    ll.add(response.body().getData().getCompany_list().get(j).getBusiness_name());
+                                }
+                            }
+                        }
+                        else if (cname.equals("Life Insurance"))
+                        {
+                            for (int j=0;j<k;j++)
+                            {
+                                if (response.body().getData().getCompany_list().get(j).getPolicy_type().getName().equals("Life Insurance"))
+                                {
+                                    ll.add(response.body().getData().getCompany_list().get(j).getBusiness_name());
+                                }
+                            }
+                        }
+                ArrayAdapter as=new ArrayAdapter(SignupActivity.this,android.R.layout.simple_spinner_dropdown_item,ll);
+                selectcompany.setAdapter(as);
+
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent)
+                    {
+
+                    }
+                });
+//
+
+            }
+            @Override
+            public void onFailure(Call<Compres> call, Throwable t)
+            {
+                Toast.makeText(SignupActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
-        selectcompany=(Spinner)findViewById(R.id.selectcompany_singupactivity);
-        ArrayAdapter<CharSequence> selectcompanyadapter = ArrayAdapter.createFromResource(this, R.array.select_company, android.R.layout.simple_spinner_item);
-        selectcompanyadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        selectcompany.setAdapter(selectcompanyadapter);
+//        ArrayAdapter<CharSequence> selectcompanyadapter = ArrayAdapter.createFromResource(this, R.array.select_company, android.R.layout.simple_spinner_item);
+//        selectcompanyadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        selectcompany.setAdapter(selectcompanyadapter);
 
-        companytype=(Spinner)findViewById(R.id.companytype_singupactivity);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.select_company_type,android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        companytype.setAdapter(adapter);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.select_company_type,android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        companytype.setAdapter(adapter);
 
         radioGroup=(RadioGroup)findViewById(R.id.radiogroup);
         rb_agent=(RadioButton)findViewById(R.id.radioagent_Signupactivity);
@@ -111,7 +202,6 @@ public class SignupActivity extends AppCompatActivity
 
     private void intialization()
     {
-
         FirstName=input_firstname.getText().toString().trim();
         LastName=input_lastname.getText().toString().trim();
         Email=input_email.getText().toString().trim();
