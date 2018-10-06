@@ -58,7 +58,7 @@ public interface ApiService
 
     @Headers("Content-Type:application/json")
     @GET("/api/notifications")
-    Call<Notresponse> getNotification(@Header("app_sid") String S_id );
+    Call<Notresponse> getNotification(@Header("app_sid") String S_id);
 
 
 
