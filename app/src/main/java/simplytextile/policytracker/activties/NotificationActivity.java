@@ -27,7 +27,7 @@ public class NotificationActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notification_activity);
-        notification_recycler=(RecyclerView)findViewById(R.id.notificationrecyler);
+        notification_recycler=(RecyclerView)findViewById(R.id.notificationrecylers);
         llm=new LinearLayoutManager(this);
         SharedPreferences mPrefs = getSharedPreferences("IDvalue",0);
         String S_id = mPrefs.getString("key", "");
