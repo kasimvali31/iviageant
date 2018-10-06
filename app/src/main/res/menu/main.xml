@@ -6,4 +6,6 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item android:id="@+id/add_agents"
+        android:title="Add"/>
 </menu>
