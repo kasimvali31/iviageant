@@ -1,34 +1,55 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="5dp"
         android:weightSum="2">
         <TextView
             android:id="@+id/mtext_customer_id_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#d2121111"
+            android:layout_margin="3dp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
             android:layout_weight="1"/>
     </LinearLayout>
     <TextView
         android:text="last name"
         android:id="@+id/lastname_customer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#d2121111"
+        android:textStyle="bold"
+        app:fontFamily="serif"
+        android:layout_margin="3dp"
+        />
     <TextView
         android:id="@+id/mobile"
         android:text="mobile"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#d2121111"
+        android:textStyle="bold"
+        app:fontFamily="serif"/>
     <TextView
         android:id="@+id/customer_id_proof_proof"
         android:text="govt proof number"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:textSize="15sp"
+        android:textColor="#d2121111"
+        android:textStyle="bold"
+        app:fontFamily="serif"/>
     <LinearLayout
         android:weightSum="2"
         android:layout_width="match_parent"
@@ -38,27 +59,51 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="1"
+            android:textSize="15sp"
+            android:textColor="#d2121111"
+            android:textStyle="bold"
+            app:fontFamily="serif"
             android:text="Address"/>
         <TextView
             android:id="@+id/customer_address"
             android:text="address"
+            android:gravity="center|left"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:textColor="#d2121111"
+            android:textStyle="bold"
+            app:fontFamily="serif"/>
     </LinearLayout>
     <TextView
         android:id="@+id/customer_email"
         android:text="email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#d2121111"
+        android:textStyle="bold"
+        app:fontFamily="serif"
+        android:layout_margin="3dp"/>
     <TextView
         android:id="@+id/customer_dob"
         android:text="dob"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#d2121111"
+        android:textStyle="bold"
+        app:fontFamily="serif"
+        android:layout_margin="3dp"/>
     <TextView
         android:text="Agent Details :"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#d2121111"
+        android:textStyle="bold"
+        app:fontFamily="serif"
+        android:layout_margin="3dp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
