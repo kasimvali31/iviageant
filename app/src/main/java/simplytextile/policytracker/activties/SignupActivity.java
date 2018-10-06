@@ -155,8 +155,6 @@ public class SignupActivity extends AppCompatActivity
 
                     }
                 });
-//
-
             }
             @Override
             public void onFailure(Call<Compres> call, Throwable t)
@@ -164,7 +162,7 @@ public class SignupActivity extends AppCompatActivity
                 Toast.makeText(SignupActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
             }
         });
-        
+
         radioGroup=(RadioGroup)findViewById(R.id.radiogroup);
         rb_agent=(RadioButton)findViewById(R.id.radioagent_Signupactivity);
         rb_manager=(RadioButton)findViewById(R.id.radioManager_signupactivity);
@@ -175,8 +173,6 @@ public class SignupActivity extends AppCompatActivity
             {
                 selectcompany.setVisibility(View.INVISIBLE);
                 companytype.setVisibility(View.INVISIBLE);
-
-
             }
         });
         rb_manager.setOnClickListener(new View.OnClickListener()
