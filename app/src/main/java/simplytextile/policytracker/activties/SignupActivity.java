@@ -164,16 +164,7 @@ public class SignupActivity extends AppCompatActivity
                 Toast.makeText(SignupActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-//        ArrayAdapter<CharSequence> selectcompanyadapter = ArrayAdapter.createFromResource(this, R.array.select_company, android.R.layout.simple_spinner_item);
-//        selectcompanyadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        selectcompany.setAdapter(selectcompanyadapter);
-
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.select_company_type,android.R.layout.simple_spinner_item);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        companytype.setAdapter(adapter);
-
+        
         radioGroup=(RadioGroup)findViewById(R.id.radiogroup);
         rb_agent=(RadioButton)findViewById(R.id.radioagent_Signupactivity);
         rb_manager=(RadioButton)findViewById(R.id.radioManager_signupactivity);
