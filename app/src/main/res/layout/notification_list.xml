@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -8,14 +9,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <TextView
             android:text="Policy Details :"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp" />
         <TextView
             android:id="@+id/policy_number"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -25,11 +40,21 @@
         <TextView
             android:text="Coverage Info :"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/coverage_info"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -39,19 +64,39 @@
         <TextView
             android:text="Customer Details :"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/customer_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/customer_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/business_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -61,15 +106,30 @@
         <TextView
             android:text="Company :"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/company_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/company_business_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
 
     </LinearLayout>
 
@@ -81,11 +141,21 @@
         <TextView
             android:text="Format Details :"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/format_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
 
     </LinearLayout>
 
@@ -96,13 +166,21 @@
         <TextView
             android:text="Type Details :"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/type_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
     </LinearLayout>
-
-
+</LinearLayout>
 </LinearLayout>
