@@ -52,11 +52,6 @@ public class SignupActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_activity);
         initViews();
-
-
-
-
-
         ActionBar actionBar = getActionBar();
     }
 
@@ -72,14 +67,32 @@ public class SignupActivity extends AppCompatActivity
         input_password=(EditText)findViewById(R.id.password_signupactivity_input);
         selectcompany=(Spinner)findViewById(R.id.selectcompany_singupactivity);
         companytype=(Spinner)findViewById(R.id.companytype_singupactivity);
-
         register=(Button)findViewById(R.id.register_signup);
         register.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-              intialization();
+
+              radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                  @Override
+                  public void onCheckedChanged(RadioGroup group, int checkedId)
+                  {
+                      switch(checkedId)
+                      {
+                          case R.id.radioagent_Signupactivity:
+                              agentintialization();
+                              // do operations specific to this selection
+                              break;
+                          case R.id.radioManager_signupactivity:
+                              // do operations specific to this selection
+                              managerintilization();
+                              break;
+
+                      }
+                  }
+              });
+
             }
         });
 
@@ -191,7 +204,8 @@ public class SignupActivity extends AppCompatActivity
         });
     }
 
-    private void intialization()
+
+    private void managerintilization()
     {
         FirstName=input_firstname.getText().toString().trim();
         LastName=input_lastname.getText().toString().trim();
@@ -233,14 +247,128 @@ public class SignupActivity extends AppCompatActivity
 
         else
         {
-           signupRequest();
+            managersignupRequest();
+        }
+    }
+
+    private void agentintialization()
+    {
+        FirstName=input_firstname.getText().toString().trim();
+        LastName=input_lastname.getText().toString().trim();
+        Email=input_email.getText().toString().trim();
+        Phone=input_phone.getText().toString().trim();
+        LoginName=input_loginanme.getText().toString().trim();
+        Password=input_password.getText().toString().trim();
+        if (FirstName.isEmpty())
+        {
+            input_firstname.requestFocus();
+            input_firstname.setError("Enter FirstName");
+        }
+
+        else if(LastName.isEmpty())
+        {
+            input_lastname.requestFocus();
+            input_lastname.setError("Enter LastName");
+        }
+        else if(Email.isEmpty())
+        {
+            input_email.requestFocus();
+            input_email.setError("Enter email");
+        }
+        else if (Phone.isEmpty())
+        {
+            input_phone.requestFocus();
+            input_phone.setError("Enter Phone");
+        }
+        else if(LoginName.isEmpty())
+        {
+            input_loginanme.requestFocus();
+            input_loginanme.setError("Enter Login Name");
+        }
+        else if (Password.isEmpty())
+        {
+            input_password.requestFocus();
+            input_password.setError("Enter Password");
+        }
+
+        else
+        {
+           agentsignupRequest();
         }
     }
 
 
 
 
-    private void signupRequest()
+    private void agentsignupRequest()
+    {
+
+        JSONObject jsonObject=new JSONObject();
+        JSONObject jsonObjectSub=new JSONObject();
+        try
+        {
+            jsonObjectSub.put("id",0);
+            jsonObjectSub.put("type_id",6500);
+            jsonObjectSub.put("business_name","");
+            jsonObjectSub.put("first_name",FirstName);
+            jsonObjectSub.put("last_name",LastName);
+            jsonObjectSub.put("aadhar_number","");
+            jsonObjectSub.put("govt_id_number","");
+            jsonObjectSub.put("irdai_number","");
+            JSONObject jsonObjectAdd=new JSONObject();
+            jsonObjectAdd.put("address1","");
+            jsonObjectAdd.put("address2","");
+            jsonObjectAdd.put("address3","");
+            jsonObjectAdd.put("city","");
+            jsonObjectAdd.put("state","");
+            jsonObjectAdd.put("zip","");
+            jsonObjectAdd.put("email1",Email);
+            jsonObjectAdd.put("phone1",Phone);
+            jsonObjectAdd.put("email2","");
+            jsonObjectAdd.put("phone2","");
+            jsonObjectSub.put("address",jsonObjectAdd);
+            JSONObject jsonObjectUser=new JSONObject();
+            jsonObjectUser.put("login_name",LoginName);
+            jsonObjectUser.put("password",Password);
+            jsonObjectSub.put("user",jsonObjectUser);
+            JSONArray comArray =new JSONArray();
+            jsonObjectSub.put("company_list",comArray);
+            jsonObject.put("subscriber",jsonObjectSub);
+
+            Utills.getVolleyResponseJson(SignupActivity.this, Request.Method.POST, "http://dev.simplytextile.com:9081/api/subscribers", jsonObject, new VolleyCallback() {
+                @Override
+                public void onSuccessResponse(String result)
+                {
+                    try
+                    {
+                        JSONObject jb =new JSONObject(result);
+                        String   msg=jb.getString("message");
+                        Toast.makeText(SignupActivity.this, ""+msg, Toast.LENGTH_SHORT).show();
+
+                    } catch (JSONException e)
+                    {
+                        e.printStackTrace();
+                    }
+                    Toast.makeText(SignupActivity.this, ""+result, Toast.LENGTH_SHORT).show();
+                           Intent mainactivity =new Intent(SignupActivity.this,LoginActivity.class);
+                           startActivity(mainactivity);
+
+
+
+                }
+            });
+
+
+
+        }
+        catch (JSONException e)
+        {
+                   e.printStackTrace();
+        }
+
+    }
+
+    private void managersignupRequest()
     {
 
         JSONObject jsonObject=new JSONObject();
@@ -291,8 +419,8 @@ public class SignupActivity extends AppCompatActivity
                         e.printStackTrace();
                     }
                     Toast.makeText(SignupActivity.this, ""+result, Toast.LENGTH_SHORT).show();
-                           Intent mainactivity =new Intent(SignupActivity.this,LoginActivity.class);
-                           startActivity(mainactivity);
+                    Intent mainactivity =new Intent(SignupActivity.this,LoginActivity.class);
+                    startActivity(mainactivity);
 
 
 
@@ -304,7 +432,7 @@ public class SignupActivity extends AppCompatActivity
         }
         catch (JSONException e)
         {
-                   e.printStackTrace();
+            e.printStackTrace();
         }
 
     }

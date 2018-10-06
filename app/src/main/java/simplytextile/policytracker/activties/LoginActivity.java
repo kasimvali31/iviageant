@@ -156,7 +156,7 @@ public class LoginActivity extends AppCompatActivity
                       userprofile.putString("postalcode",PostalCode);
                       userprofile.putString("adhaarcard",AdhaarNaumber);
 
-                      Intent a=new Intent(LoginActivity.this,AddAgentActivity.class);
+                      Intent a=new Intent(LoginActivity.this,AddCustomerActivity.class);
 
                       startActivity(a);
 
@@ -173,7 +173,7 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t)
             {
-                     Toast.makeText(LoginActivity.this,"Something went Wrong",Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this,"Something went Wrong",Toast.LENGTH_LONG).show();
                 pDialog.dismiss();
 
 

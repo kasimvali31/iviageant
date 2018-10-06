@@ -1,5 +1,6 @@
 package simplytextile.policytracker.activties;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -16,14 +17,16 @@ import simplytextile.policytracker.VolleyCallback;
 
 public class AddCustomerActivity extends AppCompatActivity
 {
-
+    public  static String S_id;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_customer);
-
-        try {
+        SharedPreferences mPrefs = getSharedPreferences("IDvalue",0);
+         S_id = mPrefs.getString("key", "");
+        try
+        {
 
             JSONObject jmain=new JSONObject();
             JSONObject jsub1=new JSONObject();
@@ -82,7 +85,8 @@ public class AddCustomerActivity extends AppCompatActivity
                         jb = new JSONObject(result);
                         String   msg=jb.getString("message");
                         Toast.makeText(AddCustomerActivity.this, ""+msg, Toast.LENGTH_SHORT).show();
-                    } catch (JSONException e)
+                    }
+                    catch (JSONException e)
                     {
                         e.printStackTrace();
                     }

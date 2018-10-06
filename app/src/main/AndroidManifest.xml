@@ -29,10 +29,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activties.HomeActivity" >
 
         </activity>
         <activity android:name=".activties.CustomerActivity" />
+        <activity android:name=".activties.AddCustomerActivity" >
+
+        </activity>
         <activity android:name=".activties.CompaniesActivity" >
 
         </activity>
@@ -43,11 +47,7 @@
         <activity android:name=".activties.UpdateUserProfileActivity" />
         <activity android:name=".activties.AgentsListActivity" />
         <activity android:name=".activties.AddAgentActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
