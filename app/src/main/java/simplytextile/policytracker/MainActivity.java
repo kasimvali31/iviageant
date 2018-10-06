@@ -148,12 +148,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         else if (id == R.id.policies)
         {
-            Intent home =new Intent(MainActivity.this, AgentsListActivity.class);
-            startActivity(home);
+            Intent policies =new Intent(MainActivity.this, PoliciesActivity.class);
+            startActivity(policies);
         }
+        else if(id==R.id.agent)
+        {
+            Intent agent =new Intent(MainActivity.this, AgentsListActivity.class);
+            startActivity(agent);
+
+        }
+
 
         else if (id == R.id.customers)
         {
+
             Intent customer =new Intent(MainActivity.this, CustomerActivity.class);
             startActivity(customer);
 
