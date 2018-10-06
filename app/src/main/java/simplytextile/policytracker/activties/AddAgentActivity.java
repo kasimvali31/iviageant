@@ -1,5 +1,7 @@
 package simplytextile.policytracker.activties;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -15,12 +17,18 @@ import simplytextile.policytracker.VolleyCallback;
 
 public class AddAgentActivity extends AppCompatActivity
 {
+public  static String S_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_agent_activity);
+        SharedPreferences mPrefs = getSharedPreferences("IDvalue",0);
+        S_id= mPrefs.getString("key", "");
+
+
+
         initParams();
     }
     public void initParams()

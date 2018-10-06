@@ -156,7 +156,7 @@ public class LoginActivity extends AppCompatActivity
                       userprofile.putString("postalcode",PostalCode);
                       userprofile.putString("adhaarcard",AdhaarNaumber);
 
-                      Intent a=new Intent(LoginActivity.this,MainActivity.class);
+                      Intent a=new Intent(LoginActivity.this,AddAgentActivity.class);
 
                       startActivity(a);
 

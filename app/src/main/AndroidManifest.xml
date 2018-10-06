@@ -42,7 +42,13 @@
         <activity android:name=".activties.UserProfileActivity" />
         <activity android:name=".activties.UpdateUserProfileActivity" />
         <activity android:name=".activties.AgentsListActivity" />
-        <activity android:name=".activties.AddAgentActivity"></activity>
+        <activity android:name=".activties.AddAgentActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
