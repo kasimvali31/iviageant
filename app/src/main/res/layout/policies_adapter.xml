@@ -1,5 +1,12 @@
-<LinearLayout android:layout_width="match_parent"
+<ScrollView
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
@@ -10,19 +17,39 @@
         android:text="Customer"
         android:id="@+id/text1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="#d2121111"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:fontFamily="serif"
+        android:layout_margin="2dp"/>
     <TextView
         android:id="@+id/id"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="#d2121111"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:fontFamily="serif"
+        android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/policy_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/policy_business_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,38 +61,73 @@
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/policy_address"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"
             android:layout_weight="1"/>
     </LinearLayout>
     <TextView
         android:id="@+id/policy_email"
         android:text="email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="#d2121111"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:fontFamily="serif"
+        android:layout_margin="2dp"/>
     <TextView
         android:id="@+id/policy_phone"
         android:text="email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="#d2121111"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:fontFamily="serif"
+        android:layout_margin="2dp"/>
     <TextView
         android:id="@+id/policy_govtid"
         android:text="govtId"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="#d2121111"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:fontFamily="serif"
+        android:layout_margin="2dp"/>
     <TextView
         android:id="@+id/policy_aadar"
         android:text="Aadar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="#d2121111"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:fontFamily="serif"
+        android:layout_margin="2dp"/>
     <TextView
         android:id="@+id/policy_dob"
         android:text="date of birth"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="#d2121111"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:fontFamily="serif"
+        android:layout_margin="2dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,36 +136,76 @@
         <TextView
             android:text="Company details"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/company_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/company_business_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/company_irdai_number"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/company_govt_id_number"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:text="PolicyDetails"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/company_policy_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/company_policy_description"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
 
     </LinearLayout>
     <LinearLayout
@@ -113,31 +215,66 @@
         <TextView
             android:text="Agent Details :"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/policy_agent_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/policy_agent_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/policy_agent_business"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/policy_agent_aadar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/policy_agent_govt"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/policy_agent_update_counter"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -150,6 +287,11 @@
                 android:text="Address"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:textColor="#d2121111"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:fontFamily="serif"
+                android:layout_margin="2dp"
                 android:layout_weight="1"/>
             <TextView
                 android:id="@+id/policy_agent_address"
@@ -157,16 +299,32 @@
                 android:layout_gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:textColor="#d2121111"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:fontFamily="serif"
+                android:layout_margin="2dp"
                 android:layout_weight="1"/>
         </LinearLayout>
         <TextView
             android:id="@+id/policy_agent_phone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/policy_agent_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
     </LinearLayout>
 
 </LinearLayout>
+</ScrollView>

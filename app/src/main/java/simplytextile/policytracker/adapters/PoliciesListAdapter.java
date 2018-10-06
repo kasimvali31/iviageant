@@ -23,7 +23,8 @@ public class PoliciesListAdapter extends RecyclerView.Adapter<PoliciesListAdapte
     List<PolicyList> policy_list;
     Context context;
 
-    public PoliciesListAdapter(List<PolicyList> policy_list, Context context) {
+    public PoliciesListAdapter(List<PolicyList> policy_list, Context context)
+    {
         this.policy_list = policy_list;
         this.context = context;
     }
