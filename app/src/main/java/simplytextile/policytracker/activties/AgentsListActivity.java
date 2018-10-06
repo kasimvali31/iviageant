@@ -10,6 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import retrofit2.Call;
@@ -27,6 +29,7 @@ public class AgentsListActivity extends AppCompatActivity
 {
     SharedPreferences sharedpreferences;
     RecyclerView agents_list_recycler;
+    ImageView imageView;
 
     LinearLayoutManager llm;
     @Override
@@ -38,7 +41,18 @@ public class AgentsListActivity extends AppCompatActivity
         SharedPreferences mPrefs = getSharedPreferences("IDvalue",0);
         String S_id = mPrefs.getString("key", "");
         agents_list_recycler=(RecyclerView)findViewById(R.id.agents_list_recycler);
+        imageView=(ImageView)findViewById(R.id.image_addbutton);
         llm=new LinearLayoutManager(this);
+
+        imageView.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent addagent=new Intent(AgentsListActivity.this,AddAgentActivity.class);
+                startActivity(addagent);
+            }
+        });
         ApiService ps = ApiClient.getClient().create(ApiService.class);
         Call<AgentsResponse> agents=ps.getAgents(S_id);
         agents.enqueue(new Callback<AgentsResponse>() {
@@ -71,6 +85,8 @@ public class AgentsListActivity extends AppCompatActivity
         inflater.inflate(R.menu.main, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)

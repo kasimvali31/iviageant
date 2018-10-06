@@ -9,6 +9,11 @@
             android:icon="@drawable/home"
             android:title="Home" />
         <item
+            android:id="@+id/agent"
+            android:icon="@drawable/home"
+            android:title="Agent"
+            android:visible="true"/>
+        <item
             android:id="@+id/company"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Companies" />

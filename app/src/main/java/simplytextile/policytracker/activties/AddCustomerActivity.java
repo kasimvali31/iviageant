@@ -1,6 +1,7 @@
 package simplytextile.policytracker.activties;
 
 import android.app.DatePickerDialog;
+import android.content.SharedPreferences;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,7 +27,7 @@ import simplytextile.policytracker.VolleyCallback;
 
 public class AddCustomerActivity extends AppCompatActivity
 {
-
+public static String S_id;
     EditText business_name_add_customer,first_name_add_customer,last_name_add_customer,dob_add_customer,
             email_name_add_customer,phone2_name_add_customer,phone1_name_add_customer,aadar_name_add_customer,pan_number_name_add_customer,
             address1_name_add_customer,state_name_add_customer,city_name_add_customer,postal_name_add_customer;
@@ -41,6 +42,8 @@ public class AddCustomerActivity extends AppCompatActivity
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_customer);
+        SharedPreferences mPrefs = getSharedPreferences("IDvalue",0);
+         S_id = mPrefs.getString("key", "");
         initParams();
 
     }

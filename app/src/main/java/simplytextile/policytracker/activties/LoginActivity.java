@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity
 {
 
     TextView signupText;
+   public static String typeid;
 
 
     SharedPreferences mPrefs;
@@ -145,6 +146,7 @@ public class LoginActivity extends AppCompatActivity
                       String City=response.body().getData().getSession().getSubscriber().getAddress().getCity();
                       String PostalCode=response.body().getData().getSession().getSubscriber().getAddress().getZip();
                       String AdhaarNaumber=response.body().getData().getSession().getSubscriber().getAadhar_number();
+                       typeid= String.valueOf(response.body().getData().getSession().getSubscriber().getType_id());
 
                       pDialog.dismiss();
                       Bundle userprofile= new Bundle();
@@ -156,7 +158,7 @@ public class LoginActivity extends AppCompatActivity
                       userprofile.putString("postalcode",PostalCode);
                       userprofile.putString("adhaarcard",AdhaarNaumber);
 
-                      Intent a=new Intent(LoginActivity.this,AddCustomerActivity.class);
+                      Intent a=new Intent(LoginActivity.this,MainActivity.class);
 
                       startActivity(a);
 

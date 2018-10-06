@@ -2,6 +2,7 @@ package simplytextile.policytracker.activties;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,6 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import retrofit2.Call;
@@ -24,6 +27,7 @@ public class CustomerActivity extends AppCompatActivity
 {
     public static final String ss="name";
     RecyclerView customer_recycler;
+    ImageView imageView;
     LinearLayoutManager llm;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -33,6 +37,17 @@ public class CustomerActivity extends AppCompatActivity
         setContentView(R.layout.customer_activity);
 
         customer_recycler=(RecyclerView)findViewById(R.id.customer_recycler);
+        imageView=(ImageView)findViewById(R.id.image_addbutton);
+        imageView.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent addcustomer=new Intent(CustomerActivity.this,AddCustomerActivity.class);
+                startActivity(addcustomer);
+            }
+        });
+
         llm=new LinearLayoutManager(this);
         SharedPreferences mPrefs = getSharedPreferences("IDvalue",0);
         String S_id = mPrefs.getString("key", "");

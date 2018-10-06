@@ -43,6 +43,7 @@ public class SignupActivity extends AppCompatActivity
     Spinner companytype,selectcompany;
     Button register;
     String a1[];
+    String selecteddtext;
     String cname;
     int k;
     ArrayList ll=new ArrayList();
@@ -70,28 +71,44 @@ public class SignupActivity extends AppCompatActivity
         register=(Button)findViewById(R.id.register_signup);
         register.setOnClickListener(new View.OnClickListener()
         {
+
+
             @Override
             public void onClick(View v)
             {
 
-              radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                  @Override
-                  public void onCheckedChanged(RadioGroup group, int checkedId)
-                  {
-                      switch(checkedId)
-                      {
-                          case R.id.radioagent_Signupactivity:
-                              agentintialization();
-                              // do operations specific to this selection
-                              break;
-                          case R.id.radioManager_signupactivity:
-                              // do operations specific to this selection
-                              managerintilization();
-                              break;
+                if(selecteddtext.equals("Agent"))
+                {
+                //code if condition is true
+                    agentintialization();
+                }
+                else
+               {
+//code if condition is false
+                        managerintilization();
+                }
 
-                      }
-                  }
-              });
+
+
+//              radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+//              {
+//                  @Override
+//                  public void onCheckedChanged(RadioGroup group, int checkedId)
+//                  {
+//                      switch(checkedId)
+//                      {
+//                          case R.id.radioagent_Signupactivity:
+//                              agentintialization();
+//                              // do operations specific to this selection
+//                              break;
+//                          case R.id.radioManager_signupactivity:
+//                              // do operations specific to this selection
+//                              managerintilization();
+//                              break;
+//
+//                      }
+//                  }
+//              });
 
             }
         });
@@ -184,8 +201,12 @@ public class SignupActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+
+               selecteddtext=rb_agent.getText().toString();
                 selectcompany.setVisibility(View.INVISIBLE);
                 companytype.setVisibility(View.INVISIBLE);
+
+
             }
         });
         rb_manager.setOnClickListener(new View.OnClickListener()
@@ -193,6 +214,7 @@ public class SignupActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                 selecteddtext=rb_manager.getText().toString();
                 selectcompany.setVisibility(View.VISIBLE);
                 companytype.setVisibility(View.VISIBLE);
 
@@ -341,7 +363,9 @@ public class SignupActivity extends AppCompatActivity
                         String   msg=jb.getString("message");
                         Toast.makeText(SignupActivity.this, ""+msg, Toast.LENGTH_SHORT).show();
 
-                    } catch (JSONException e)
+                    }
+
+                    catch (JSONException e)
                     {
                         e.printStackTrace();
                     }

@@ -20,6 +20,7 @@ import android.widget.TextView;
 import simplytextile.policytracker.activties.AgentsListActivity;
 import simplytextile.policytracker.activties.CompaniesActivity;
 import simplytextile.policytracker.activties.CustomerActivity;
+import simplytextile.policytracker.activties.LoginActivity;
 import simplytextile.policytracker.activties.NotificationActivity;
 import simplytextile.policytracker.activties.PoliciesActivity;
 import simplytextile.policytracker.activties.UpdateUserProfileActivity;
@@ -58,13 +59,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        String tid=LoginActivity.typeid;
+        if(tid.equals("6500"))
+        {
+            navigationView.getMenu().findItem(R.id.agent).setVisible(false);
+        }
+        else
+        {
+            navigationView.getMenu().findItem(R.id.agent).setVisible(true);
+
+        }
+//        navigationView.getMenu().findItem(R.id.agent).setVisible(true);
+//        navigationView.setNavigationItemSelectedListener(this);
         navigationView.setNavigationItemSelectedListener(this);
+
 
         View headerview = navigationView.getHeaderView(0);
         TextView profilename = (TextView) headerview.findViewById(R.id.username);
@@ -84,7 +97,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
+        if (drawer.isDrawerOpen(GravityCompat.START))
+        {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
@@ -92,7 +106,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
