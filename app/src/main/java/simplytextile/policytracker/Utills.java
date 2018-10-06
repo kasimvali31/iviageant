@@ -1,6 +1,7 @@
 package simplytextile.policytracker;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -18,10 +19,18 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import simplytextile.policytracker.activties.AddAgentActivity;
+
 public class Utills
 {
 
-    public static void getVolleyResponseJson(final Context mContext, int method, final String url, final JSONObject params, final VolleyCallback callback) {
+    public static void getVolleyResponseJson(final Context mContext, int method, final String url, final JSONObject params, final VolleyCallback callback)
+    {
+        final String s=AddAgentActivity.S_id;
+
+//        AddAgentActivity add=new AddAgentActivity();
+//        final String s=add.S_id;
+
 
         AppController.getInstance().addToRequestQueue(new JsonObjectRequest(method, url, params, new Response.Listener<JSONObject>()
         {
@@ -60,6 +69,12 @@ public class Utills
                 // hide the progress dialog
 
             }
+
+
+
+
+
+
         }
 
         )
@@ -71,10 +86,13 @@ public class Utills
 
                 Map<String, String>  params = new HashMap<String, String>();
                 params.put("Content-Type", "application/json");
-                params.put("app_sid", "77e93c82c88d11e891a1aa3a52b410b4");
+                params.put("app_sid", s);
                 return params;
             }
         });
+
+
+
 
     }
 

@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import simplytextile.policytracker.activties.AgentsListActivity;
 import simplytextile.policytracker.activties.CompaniesActivity;
 import simplytextile.policytracker.activties.CustomerActivity;
 import simplytextile.policytracker.activties.NotificationActivity;
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         else if (id == R.id.policies)
         {
-            Intent home =new Intent(MainActivity.this, PoliciesActivity.class);
+            Intent home =new Intent(MainActivity.this, AgentsListActivity.class);
             startActivity(home);
         }
 

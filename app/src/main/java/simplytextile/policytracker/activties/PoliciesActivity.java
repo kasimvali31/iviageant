@@ -1,5 +1,6 @@
 package simplytextile.policytracker.activties;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,9 +27,11 @@ public class PoliciesActivity extends AppCompatActivity {
 
         policies_recycler=(RecyclerView)findViewById(R.id.policies_recycler);
         llm=new LinearLayoutManager(this);
+        SharedPreferences mPrefs = getSharedPreferences("IDvalue",0);
+        String S_id = mPrefs.getString("key", "");
 
         ApiService planView = ApiClient.getClient().create(ApiService.class);
-        Call<PoliciesResponse> policResponse= planView.getPolicies();
+        Call<PoliciesResponse> policResponse= planView.getPolicies(S_id);
         policResponse.enqueue(new Callback<PoliciesResponse>()
         {
             @Override
