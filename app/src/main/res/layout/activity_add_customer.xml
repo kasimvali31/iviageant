@@ -1,4 +1,5 @@
-<ScrollView android:layout_width="match_parent"
+<ScrollView
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
@@ -7,40 +8,50 @@
         android:orientation="vertical">
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
             <EditText
                 android:id="@+id/business_name_add_customer"
                 android:hint="business name"
-                android:paddingLeft="10dp"
+
                 android:layout_margin="5dp"
                 android:inputType="text"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
             <EditText
                 android:id="@+id/first_name_add_customer"
                 android:hint="First name"
-                android:paddingLeft="10dp"
                 android:layout_margin="5dp"
                 android:inputType="textPersonName"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
             <EditText
                 android:id="@+id/last_name_add_customer"
                 android:hint="Last name"
-                android:paddingLeft="10dp"
                 android:layout_margin="5dp"
                 android:inputType="textPersonName"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
 
 
@@ -54,14 +65,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:focusableInTouchMode="false"
+                android:layout_margin="10dp"
                 android:layout_weight="1.5">
                 <EditText
                     android:id="@+id/dob_add_customer"
                     android:hint="dd/mm/yyyy"
-                    android:paddingLeft="10dp"
                     android:layout_margin="5dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10dp"
+                    android:padding="10dp"
+                    android:background="@drawable/edittext_shapes"/>
             </android.support.design.widget.TextInputLayout>
             <ImageView
                 android:id="@+id/select_date"
@@ -74,118 +88,145 @@
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
             <EditText
                 android:id="@+id/email_name_add_customer"
                 android:hint="email"
-                android:paddingLeft="10dp"
                 android:layout_margin="5dp"
                 android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
             <EditText
                 android:id="@+id/phone1_name_add_customer"
                 android:hint="phone"
-                android:paddingLeft="10dp"
                 android:layout_margin="5dp"
                 android:inputType="phone"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
             <EditText
                 android:id="@+id/phone2_name_add_customer"
                 android:hint="Alternate phone"
-                android:paddingLeft="10dp"
                 android:layout_margin="5dp"
                 android:inputType="phone"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
             <EditText
                 android:id="@+id/aadar_name_add_customer"
                 android:hint="aadar number"
-                android:paddingLeft="10dp"
                 android:layout_margin="5dp"
                 android:inputType="phone"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
             <EditText
                 android:id="@+id/pan_number_name_add_customer"
                 android:hint="Pan number"
-                android:paddingLeft="10dp"
                 android:layout_margin="5dp"
                 android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
             <EditText
                 android:id="@+id/address1_name_add_customer"
                 android:hint="address"
-                android:paddingLeft="10dp"
                 android:layout_margin="5dp"
                 android:inputType="text"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
             <EditText
                 android:id="@+id/state_name_add_customer"
                 android:hint="State"
-                android:paddingLeft="10dp"
                 android:layout_margin="5dp"
                 android:inputType="text"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
             <EditText
                 android:id="@+id/city_name_add_customer"
                 android:hint="city"
-                android:paddingLeft="10dp"
                 android:layout_margin="5dp"
                 android:inputType="text"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
             <EditText
                 android:id="@+id/postal_name_add_customer"
                 android:hint="Postal code"
-                android:paddingLeft="10dp"
                 android:layout_margin="5dp"
                 android:inputType="textPersonName"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
 
 

@@ -34,14 +34,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:inputType="text"
-                android:background="@drawable/edittext_shape"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"
                 android:layout_margin="5dp"
                 android:hint="Username"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#141515"
-                android:layout_marginLeft="5dp"/>
 
             <EditText
                 android:id="@+id/loginactivity_input_password"
@@ -50,14 +47,11 @@
                 android:paddingTop="50dp"
                 android:inputType="textPassword"
                 android:layout_margin="5dp"
-                android:background="@drawable/edittext_shape"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"
                 android:hint="Password"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#141515"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+
 
         </LinearLayout>
 
