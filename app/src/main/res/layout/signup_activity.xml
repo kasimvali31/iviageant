@@ -56,29 +56,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
-        android:hint="FirstName*"/>
+        android:hint="FirstName*"
+        android:paddingLeft="10dp"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_shapes"/>
     <EditText
         android:id="@+id/lastname_signupactivity_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
+        android:paddingLeft="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_shapes"
+        android:layout_margin="5dp"
         android:hint="LastName*"/>
     <EditText
         android:id="@+id/email_signupactivity_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
+        android:paddingLeft="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_shapes"
+        android:layout_margin="5dp"
         android:hint="Email*"/>
     <EditText
         android:id="@+id/Phone_signupactivity_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
+        android:paddingLeft="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_shapes"
+        android:layout_margin="5dp"
         android:hint="Phone*"/>
     <EditText
         android:id="@+id/loginname_signupactivity_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_shapes"
+        android:layout_margin="5dp"
         android:paddingTop="20dp"
         android:hint="Login Name*"/>
     <EditText
@@ -86,14 +106,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
+        android:paddingLeft="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_shapes"
+        android:layout_margin="5dp"
         android:hint="Password*"/>
 
     <Button
+        android:layout_gravity="center"
         android:id="@+id/register_signup"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorAppTheme"
+        android:background="@drawable/save_btn_shapes"
         android:textColor="@color/colorBlack"
+        android:layout_margin="10dp"
+        android:padding="5dp"
         android:text="Register"/>
 
 </LinearLayout>
