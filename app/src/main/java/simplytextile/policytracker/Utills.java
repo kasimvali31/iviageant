@@ -27,7 +27,7 @@ public class Utills
 
     public static void getVolleyResponseJson(final Context mContext, int method, final String url, final JSONObject params, final VolleyCallback callback)
     {
-        final String s=AddCustomerActivity.S_id;
+        final String s=AddAgentActivity.S_id;
 
 //        AddAgentActivity add=new AddAgentActivity();
 //        final String s=add.S_id;

@@ -33,7 +33,6 @@ public  static String S_id;
         setContentView(R.layout.add_agent_activity);
         SharedPreferences mPrefs = getSharedPreferences("IDvalue",0);
         S_id= mPrefs.getString("key", "");
-
         initParams();
     }
     public void initParams()

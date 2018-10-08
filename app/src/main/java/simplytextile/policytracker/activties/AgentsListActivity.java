@@ -38,6 +38,7 @@ public class AgentsListActivity extends AppCompatActivity
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agents_list);
+
         SharedPreferences mPrefs = getSharedPreferences("IDvalue",0);
         String S_id = mPrefs.getString("key", "");
         agents_list_recycler=(RecyclerView)findViewById(R.id.agents_list_recycler);

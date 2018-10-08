@@ -31,7 +31,6 @@ public class NotificationActivity extends AppCompatActivity
         llm=new LinearLayoutManager(this);
         SharedPreferences mPrefs = getSharedPreferences("IDvalue",0);
         String S_id = mPrefs.getString("key", "");
-
         ApiService planView = ApiClient.getClient().create(ApiService.class);
         Call<Notresponse> policResponse= planView.getNotification(S_id);
         policResponse.enqueue(new Callback<Notresponse>()
@@ -52,7 +51,8 @@ public class NotificationActivity extends AppCompatActivity
             }
 
             @Override
-            public void onFailure(Call<Notresponse> call, Throwable t) {
+            public void onFailure(Call<Notresponse> call, Throwable t)
+            {
                 Toast.makeText(NotificationActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
             }
         });
