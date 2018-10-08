@@ -52,7 +52,8 @@ public class NotificationActivity extends AppCompatActivity
             }
 
             @Override
-            public void onFailure(Call<Notresponse> call, Throwable t) {
+            public void onFailure(Call<Notresponse> call, Throwable t)
+            {
                 Toast.makeText(NotificationActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
             }
         });

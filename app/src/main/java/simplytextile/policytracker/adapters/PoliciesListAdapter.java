@@ -71,12 +71,11 @@ public class PoliciesListAdapter extends RecyclerView.Adapter<PoliciesListAdapte
                 policy_list.get(i).getCustomer().getAgent().getAddress().getZip());
         viewHolderss.policy_agent_phone.setText(""+policy_list.get(i).getCustomer().getAgent().getAddress().getPhone1());
         viewHolderss.policy_agent_email.setText(""+policy_list.get(i).getCustomer().getAgent().getAddress().getEmail1());
-
-
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return policy_list.size();
     }
     class ViewHolderss extends RecyclerView.ViewHolder
