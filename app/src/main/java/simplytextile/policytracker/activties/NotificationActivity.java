@@ -13,7 +13,6 @@ import retrofit2.Response;
 import simplytextile.policytracker.NotificationResponse.Notresponse;
 import simplytextile.policytracker.R;
 import simplytextile.policytracker.adapters.NotificationAdapter;
-import simplytextile.policytracker.adapters.PoliciesListAdapter;
 import simplytextile.policytracker.apis.ApiClient;
 import simplytextile.policytracker.apis.ApiService;
 import simplytextile.policytracker.response.PoliciesResponse;

@@ -421,6 +421,17 @@ public class SignupActivity extends AppCompatActivity
             jsonObjectUser.put("password",Password);
             jsonObjectSub.put("user",jsonObjectUser);
             JSONArray comArray =new JSONArray();
+            comArray.put("id");
+            comArray.put("id");
+            comArray.put("id");
+            comArray.put("id");
+            JSONObject jptype=new JSONObject();
+            jptype.put("id",10);
+            jptype.put("name","");
+            jptype.put("description","");
+            jptype.put("parent_id","");
+            jptype.put("is_renewable","");
+            comArray.put(jptype);
             jsonObjectSub.put("company_list",comArray);
             jsonObject.put("subscriber",jsonObjectSub);
 
