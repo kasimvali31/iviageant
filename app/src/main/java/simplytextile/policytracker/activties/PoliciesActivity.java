@@ -39,18 +39,20 @@ public class PoliciesActivity extends AppCompatActivity {
             {
                 if (response.body().getStatuscode()==0)
                 {
-                    PoliciesListAdapter adapter=new PoliciesListAdapter(response.body().getData().getPolicy_list(),PoliciesActivity.this);
-                    policies_recycler.setAdapter(adapter);
+                    PoliciesListAdapter aa=new PoliciesListAdapter(response.body().getData().getPolicy_list(),PoliciesActivity.this);
+                    policies_recycler.setAdapter(aa);
                     policies_recycler.setLayoutManager(llm);
+//                    PoliciesListAdapter adapter=new PoliciesListAdapter(response.body().getData().getPolicy_list(),PoliciesActivity.this);
                 }
                 else
                 {
-                    Toast.makeText(PoliciesActivity.this, "else case"+response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PoliciesActivity.this, ""+response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<PoliciesResponse> call, Throwable t) {
+            public void onFailure(Call<PoliciesResponse> call, Throwable t)
+            {
                 Toast.makeText(PoliciesActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
             }
         });
