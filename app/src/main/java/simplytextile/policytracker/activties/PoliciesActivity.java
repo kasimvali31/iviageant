@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,7 @@ public class PoliciesActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
+
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.policies_activity);
@@ -56,10 +58,10 @@ public class PoliciesActivity extends AppCompatActivity
             }
         });
 
-
         ApiService planView = ApiClient.getClient().create(ApiService.class);
         Call<PoliciesResponse> policResponse = planView.getPolicies(S_id);
-        policResponse.enqueue(new Callback<PoliciesResponse>() {
+        policResponse.enqueue(new Callback<PoliciesResponse>()
+        {
             @Override
             public void onResponse(Call<PoliciesResponse> call, Response<PoliciesResponse> response)
             {
@@ -77,7 +79,8 @@ public class PoliciesActivity extends AppCompatActivity
             @Override
             public void onFailure(Call<PoliciesResponse> call, Throwable t)
             {
-                Toast.makeText(PoliciesActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(PoliciesActivity.this, ""+t, Toast.LENGTH_SHORT).show();
+                Log.e("tss",""+t);
             }
         });
     }
@@ -106,12 +109,13 @@ public class PoliciesActivity extends AppCompatActivity
         {
             viewHolderss.id.setText("" + policy_list.get(i).getId());
             viewHolderss.policy_name.setText("" + policy_list.get(i).getCustomer().getFirst_name() + "( " + policy_list.get(i).getCustomer().getLast_name() + " )");
-            viewHolderss.policy_business_name.setText("" + policy_list.get(i).getCustomer().getBusiness_name());
+            viewHolderss.policy_business_name.setText("" + policy_list.get(i).getCompany().getBusiness_name());
 //
             viewHolderss.policy_phone.setText("" + policy_list.get(i).getCustomer().getAddress().getPhone1() + "(" + policy_list.get(i).getCustomer().getAddress().getPhone2() + ")");
             viewHolderss.company_policy_name.setText("" + policy_list.get(i).getCompany().getPolicy_type().getId());
             viewHolderss.policy_start_date.setText(""+policy_list.get(i).getCoverage_info().getStart_date());
             viewHolderss.policy_end_date.setText(""+policy_list.get(i).getCoverage_info().getEnd_date());
+
 
 
 

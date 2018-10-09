@@ -101,7 +101,7 @@
             android:layout_height="match_parent"
             android:textColor="#d2121111"
             android:textSize="15sp"
-            android:textStyle="bold"
+            android:textStyle="normal"
             app:fontFamily="serif"
             android:layout_weight="1"/>
         <TextView

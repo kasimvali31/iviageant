@@ -27,9 +27,9 @@ public class PremiumInfo
     @SerializedName("end_date")
     @Expose
     private String end_date;
-    @SerializedName("amount")
-    @Expose
-    private Integer amount;
+//    @SerializedName("amount")
+//    @Expose
+//    private Integer amount;
 
     public Integer getId() {
         return id;
@@ -79,11 +79,5 @@ public class PremiumInfo
         this.end_date = end_date;
     }
 
-    public Integer getAmount() {
-        return amount;
-    }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
-    }
 }
