@@ -31,12 +31,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     ImageView profileimage;
+    TextView uname,profilename;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        uname=(TextView)findViewById(R.id.username);
+        uname.setText((LoginActivity.FirstName));
         setSupportActionBar(toolbar);
 //        profileimage=(ImageView)findViewById(R.id.profileimage);
 //        profileimage.setOnClickListener(new View.OnClickListener()
@@ -80,8 +84,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         View headerview = navigationView.getHeaderView(0);
-        TextView profilename = (TextView) headerview.findViewById(R.id.username);
-        profilename.setText("your name");
+         profilename = (TextView) headerview.findViewById(R.id.username);
+
+        profilename.setText(LoginActivity.FirstName);
         LinearLayout header = (LinearLayout) headerview.findViewById(R.id.header);
         header.setOnClickListener(new View.OnClickListener() {
             @Override

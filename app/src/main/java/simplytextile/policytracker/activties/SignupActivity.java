@@ -77,15 +77,16 @@ public class SignupActivity extends AppCompatActivity
             public void onClick(View v)
             {
 
-                if(selecteddtext.equals("Agent"))
+                if(selecteddtext.equals("Manager"))
                 {
                 //code if condition is true
-                    agentintialization();
+                    managerintilization();
                 }
                 else
                {
 //code if condition is false
-                        managerintilization();
+                   agentintialization();
+
                 }
 
 
@@ -421,12 +422,12 @@ public class SignupActivity extends AppCompatActivity
             jsonObjectUser.put("password",Password);
             jsonObjectSub.put("user",jsonObjectUser);
             JSONArray comArray =new JSONArray();
-            comArray.put("id");
-            comArray.put("id");
-            comArray.put("id");
-            comArray.put("id");
+            comArray.put(Integer.parseInt("id"),10056);
+//            comArray.put("id");
+//            comArray.put("id");
+//            comArray.put("id");
             JSONObject jptype=new JSONObject();
-            jptype.put("id",10);
+            jptype.put("id",5302);
             jptype.put("name","");
             jptype.put("description","");
             jptype.put("parent_id","");

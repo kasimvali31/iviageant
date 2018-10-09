@@ -12,14 +12,11 @@ import simplytextile.policytracker.companyresponse.Data;
 public class PoliciesResponse
 {
 
-    @SerializedName("statuscode")
-    @Expose
+
     private Integer statuscode;
-    @SerializedName("message")
-    @Expose
+
     private String message;
-    @SerializedName("data")
-    @Expose
+
     private Data data;
 
     public Integer getStatuscode() {

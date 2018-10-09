@@ -16,7 +16,7 @@
             android:layout_marginRight="15dp"
             android:textSize="15dp"
             android:textColor="@color/colorBlack"
-            android:text="add customer"/>
+            android:text="Add Agent"/>
 
         <ImageView
             android:id="@+id/image_addbutton"

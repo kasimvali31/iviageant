@@ -1,6 +1,7 @@
 package simplytextile.policytracker.activties;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,17 +30,29 @@ public class PoliciesActivity extends AppCompatActivity
 {
     RecyclerView policies_recycler;
     LinearLayoutManager llm;
+    ImageView imageView;
+    String S_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.policies_activity);
-
+        SharedPreferences mPrefs = getSharedPreferences("IDvalue", 0);
+        S_id = mPrefs.getString("key", "");
         policies_recycler = (RecyclerView) findViewById(R.id.policies_recycler);
         llm = new LinearLayoutManager(this);
-        SharedPreferences mPrefs = getSharedPreferences("IDvalue", 0);
-        String S_id = mPrefs.getString("key", "");
+        imageView=(ImageView)findViewById(R.id.image_addbutton);
+        imageView.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent addcustomer=new Intent(PoliciesActivity.this,AddAgentActivity.class);
+                startActivity(addcustomer);
+            }
+        });
+
 
         ApiService planView = ApiClient.getClient().create(ApiService.class);
         Call<PoliciesResponse> policResponse = planView.getPolicies(S_id);
@@ -58,7 +72,8 @@ public class PoliciesActivity extends AppCompatActivity
             }
 
             @Override
-            public void onFailure(Call<PoliciesResponse> call, Throwable t) {
+            public void onFailure(Call<PoliciesResponse> call, Throwable t)
+            {
                 Toast.makeText(PoliciesActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
             }
         });
