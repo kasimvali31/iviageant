@@ -420,19 +420,25 @@ public class SignupActivity extends AppCompatActivity
             jsonObjectUser.put("login_name",LoginName);
             jsonObjectUser.put("password",Password);
             jsonObjectSub.put("user",jsonObjectUser);
-            JSONArray comArray =new JSONArray();
-            comArray.put("id");
-            comArray.put("id");
-            comArray.put("id");
-            comArray.put("id");
-            JSONObject jptype=new JSONObject();
-            jptype.put("id",10);
-            jptype.put("name","");
-            jptype.put("description","");
-            jptype.put("parent_id","");
-            jptype.put("is_renewable","");
-            comArray.put(jptype);
-            jsonObjectSub.put("company_list",comArray);
+
+            JSONObject policy_type_object =new JSONObject();
+            policy_type_object.put("id",5302);
+            policy_type_object.put("name","");
+            policy_type_object.put("description","");
+            policy_type_object.put("parent_id","");
+            policy_type_object.put("is_renewable",0);
+
+
+            JSONObject array_values=new JSONObject();
+            array_values.put("id","10056");
+            array_values.put("act_date","");
+            array_values.put("business_name","");
+            array_values.put("license_number","");
+            array_values.put("policy_type",policy_type_object);
+
+            JSONArray jarray=new JSONArray();
+            jarray.put(array_values);
+            jsonObjectSub.put("company_list",jarray);
             jsonObject.put("subscriber",jsonObjectSub);
 
             Utills.getVolleyResponseJson(SignupActivity.this, Request.Method.POST, "http://dev.simplytextile.com:9081/api/subscribers", jsonObject, new VolleyCallback() {

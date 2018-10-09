@@ -44,7 +44,8 @@ public class PoliciesActivity extends AppCompatActivity
         Call<PoliciesResponse> policResponse = planView.getPolicies(S_id);
         policResponse.enqueue(new Callback<PoliciesResponse>() {
             @Override
-            public void onResponse(Call<PoliciesResponse> call, Response<PoliciesResponse> response) {
+            public void onResponse(Call<PoliciesResponse> call, Response<PoliciesResponse> response)
+            {
                 if (response.body().getStatuscode() == 0)
                 {
                     PoliciesListAdapter aa=new PoliciesListAdapter(response.body().getData().getPolicy_list(),PoliciesActivity.this);
