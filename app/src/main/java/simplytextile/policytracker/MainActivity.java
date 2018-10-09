@@ -1,6 +1,7 @@
 package simplytextile.policytracker;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -32,6 +33,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     ImageView profileimage;
     TextView uname,profilename;
+    SharedPreferences mPrefs;
+    SharedPreferences.Editor editor;
+    String tid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -68,15 +72,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        String tid=LoginActivity.typeid;
-        if(tid.equals("6500"))
+         tid=LoginActivity.typeid;
+        if(tid.equals("6501"))
         {
-            navigationView.getMenu().findItem(R.id.agent).setVisible(false);
+
+
+            navigationView.getMenu().findItem(R.id.agent).setVisible(true);
+
         }
         else
         {
-            navigationView.getMenu().findItem(R.id.agent).setVisible(true);
-
+            navigationView.getMenu().findItem(R.id.agent).setVisible(false);
         }
 //        navigationView.getMenu().findItem(R.id.agent).setVisible(true);
 //        navigationView.setNavigationItemSelectedListener(this);
@@ -178,6 +184,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         else if (id == R.id.logout)
         {
+
+            editor.clear();
+            editor.commit();
+            Intent logout=new Intent(MainActivity.this,LoginActivity.class);
+            startActivity(logout);
+//            SharedPreferences mPrefs = getSharedPreferences("IDvalue",0);
+//            String S_id = mPrefs.getString("key", "");
+
 
         }
 //        else if (id == R.id.nav_share)

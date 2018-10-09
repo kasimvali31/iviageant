@@ -21,6 +21,7 @@ public class NotificationActivity extends AppCompatActivity
 {
     RecyclerView notification_recycler;
     LinearLayoutManager llm;
+    String S_id;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -29,7 +30,7 @@ public class NotificationActivity extends AppCompatActivity
         notification_recycler=(RecyclerView)findViewById(R.id.notificationrecylers);
         llm=new LinearLayoutManager(this);
         SharedPreferences mPrefs = getSharedPreferences("IDvalue",0);
-        String S_id = mPrefs.getString("key", "");
+         S_id = mPrefs.getString("key", "");
         ApiService planView = ApiClient.getClient().create(ApiService.class);
         Call<Notresponse> policResponse= planView.getNotification(S_id);
         policResponse.enqueue(new Callback<Notresponse>()
@@ -42,6 +43,7 @@ public class NotificationActivity extends AppCompatActivity
                     NotificationAdapter adapter=new NotificationAdapter(response.body().getData().getNotification_list(),NotificationActivity.this);
                     notification_recycler.setAdapter(adapter);
                     notification_recycler.setLayoutManager(llm);
+
                 }
                 else
                 {

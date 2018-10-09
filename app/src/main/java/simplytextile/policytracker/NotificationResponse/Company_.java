@@ -82,13 +82,7 @@ public class Company_ {
         this.update_counter = update_counter;
     }
 
-    public More_ getMore() {
-        return more;
-    }
 
-    public void setMore(More_ more) {
-        this.more = more;
-    }
 
     public String getLicense_number() {
         return license_number;
@@ -126,7 +120,7 @@ public class Company_ {
 
     private Integer update_counter;
 
-    private More_ more;
+
     private String license_number;
 
     private String activation_date;
