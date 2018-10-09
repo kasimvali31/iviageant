@@ -362,9 +362,7 @@ public class SignupActivity extends AppCompatActivity
                         JSONObject jb =new JSONObject(result);
                         String   msg=jb.getString("message");
                         Toast.makeText(SignupActivity.this, ""+msg, Toast.LENGTH_SHORT).show();
-
                     }
-
                     catch (JSONException e)
                     {
                         e.printStackTrace();
@@ -372,14 +370,8 @@ public class SignupActivity extends AppCompatActivity
                     Toast.makeText(SignupActivity.this, ""+result, Toast.LENGTH_SHORT).show();
                            Intent mainactivity =new Intent(SignupActivity.this,LoginActivity.class);
                            startActivity(mainactivity);
-
-
-
                 }
             });
-
-
-
         }
         catch (JSONException e)
         {
@@ -458,14 +450,8 @@ public class SignupActivity extends AppCompatActivity
                     Toast.makeText(SignupActivity.this, ""+result, Toast.LENGTH_SHORT).show();
                     Intent mainactivity =new Intent(SignupActivity.this,LoginActivity.class);
                     startActivity(mainactivity);
-
-
-
                 }
             });
-
-
-
         }
         catch (JSONException e)
         {

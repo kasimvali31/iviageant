@@ -85,20 +85,23 @@ public class PoliciesActivity extends AppCompatActivity
         List<PolicyList> policy_list;
         Context context;
 
-        public PoliciesListAdapter(List<PolicyList> policy_list, Context context) {
+        public PoliciesListAdapter(List<PolicyList> policy_list, Context context)
+        {
             this.policy_list = policy_list;
             this.context = context;
         }
 
         @NonNull
         @Override
-        public PoliciesListAdapter.ViewHolderss onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        public PoliciesListAdapter.ViewHolderss onCreateViewHolder(@NonNull ViewGroup viewGroup, int i)
+        {
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.policies_adapter, viewGroup, false);
             return new ViewHolderss(view);
         }
 
         @Override
-        public void onBindViewHolder(@NonNull PoliciesListAdapter.ViewHolderss viewHolderss, int i) {
+        public void onBindViewHolder(@NonNull PoliciesListAdapter.ViewHolderss viewHolderss, int i)
+        {
             viewHolderss.id.setText("" + policy_list.get(i).getId());
             viewHolderss.policy_name.setText("" + policy_list.get(i).getCustomer().getFirst_name() + "( " + policy_list.get(i).getCustomer().getLast_name() + " )");
             viewHolderss.policy_business_name.setText("" + policy_list.get(i).getCustomer().getBusiness_name());
