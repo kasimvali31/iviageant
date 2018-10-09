@@ -10,7 +10,8 @@ import simplytextile.policytracker.models.AgentList;
 import simplytextile.policytracker.models.CustomerList;
 import simplytextile.policytracker.models.PolicyList;
 
-public class Data  {
+public class Data
+{
 
 
 

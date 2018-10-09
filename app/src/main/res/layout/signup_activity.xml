@@ -30,13 +30,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Manager"
-                android:checked="true" />
+                 />
 
             <RadioButton
                 android:id="@+id/radioagent_Signupactivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Agent" />
+                android:text="Agent"
+                android:checked="true"/>
 
         </RadioGroup>
     </LinearLayout>

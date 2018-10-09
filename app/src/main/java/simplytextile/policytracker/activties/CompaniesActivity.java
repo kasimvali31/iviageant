@@ -89,6 +89,7 @@ public class CompaniesActivity extends AppCompatActivity
 
 
                 company_list = new ArrayList<CompanyList>((compres.getData().getCompany_list()));
+
 //                String[] spinnerArray = new String[company_list.size()];
 //                HashMap<Integer,String> spinnerMap = new HashMap<Integer, String>();
 //                for (int i = 0; i < company_list.size(); i++)

@@ -27,6 +27,7 @@ public class LoginActivity extends AppCompatActivity
 
     TextView signupText;
    public static String typeid;
+    public static String LastName,Email,Phone,City,PostalCode,AdhaarNaumber,Address,FirstName;
 
 
     SharedPreferences mPrefs;
@@ -42,7 +43,7 @@ public class LoginActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
         initViews();
-        ActionBar actionBar = getActionBar();
+
 
 
     }
@@ -133,30 +134,31 @@ public class LoginActivity extends AppCompatActivity
                       username.setText(" ");
                       upassword.setText(" ");
                       Toast.makeText(LoginActivity.this, "" + response.body().getMessage(), Toast.LENGTH_LONG).show();
-                      String FirstName=response.body().getData().getSession().getSubscriber().getFirst_name();
                       Sid=response.body().getData().getSession().getId();
                       mPrefs = getSharedPreferences("IDvalue", 0);
                       SharedPreferences.Editor editor = mPrefs.edit();
                       editor.putString("key",Sid );
                       editor.commit();
                       Toast.makeText(LoginActivity.this, "" +Sid, Toast.LENGTH_LONG).show();
-                      String LastName=response.body().getData().getSession().getSubscriber().getLast_name();
-                      String Email=response.body().getData().getSession().getSubscriber().getAddress().getEmail1();
-                      String Phone=response.body().getData().getSession().getSubscriber().getAddress().getPhone1();
-                      String City=response.body().getData().getSession().getSubscriber().getAddress().getCity();
-                      String PostalCode=response.body().getData().getSession().getSubscriber().getAddress().getZip();
-                      String AdhaarNaumber=response.body().getData().getSession().getSubscriber().getAadhar_number();
+                      LastName=response.body().getData().getSession().getSubscriber().getLast_name();
+                       Email=response.body().getData().getSession().getSubscriber().getAddress().getEmail1();
+                       Phone=response.body().getData().getSession().getSubscriber().getAddress().getPhone1();
+                       City=response.body().getData().getSession().getSubscriber().getAddress().getCity();
+                       PostalCode=response.body().getData().getSession().getSubscriber().getAddress().getZip();
+                       AdhaarNaumber=response.body().getData().getSession().getSubscriber().getAadhar_number();
+                      FirstName =response.body().getData().getSession().getSubscriber().getFirst_name();
+                     Address= response.body().getData().getSession().getSubscriber().getAddress().getState();
                        typeid= String.valueOf(response.body().getData().getSession().getSubscriber().getType_id());
 
                       pDialog.dismiss();
-                      Bundle userprofile= new Bundle();
-                      userprofile.putString("ufirstname",FirstName);
-                      userprofile.putString("ulastname",LastName);
-                      userprofile.putString("email",Email);
-                      userprofile.putString("phone",Phone);
-                      userprofile.putString("city",City);
-                      userprofile.putString("postalcode",PostalCode);
-                      userprofile.putString("adhaarcard",AdhaarNaumber);
+//                      Bundle userprofile= new Bundle();
+//                      userprofile.putString("ufirstname",FirstName);
+//                      userprofile.putString("ulastname",LastName);
+//                      userprofile.putString("email",Email);
+//                      userprofile.putString("phone",Phone);
+//                      userprofile.putString("city",City);
+//                      userprofile.putString("postalcode",PostalCode);
+//                      userprofile.putString("adhaarcard",AdhaarNaumber);
 
                       Intent a=new Intent(LoginActivity.this,MainActivity.class);
 

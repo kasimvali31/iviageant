@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="15dp"
         android:hint="Postal Code *"/>
-    <Spinner
+    <EditText
         android:id="@+id/user_select_state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
