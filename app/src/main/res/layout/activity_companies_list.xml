@@ -1,0 +1,22 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/get_companies_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+    <android.support.design.widget.FloatingActionButton
+        app:backgroundTint="@android:color/holo_red_light"
+        android:id="@+id/adding_employee_fab_btn"
+        android:src="@drawable/add_new"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        app:elevation="8dp"
+        app:fabSize="normal"
+        android:layout_margin="15dp" />
+</RelativeLayout>

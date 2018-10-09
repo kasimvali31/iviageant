@@ -23,7 +23,8 @@ public class AgentsListAdapter extends RecyclerView.Adapter<AgentsListAdapter.Vi
     List<AgentList> agentList;
     Context context;
 
-    public AgentsListAdapter(List<AgentList> agentList, Context context) {
+    public AgentsListAdapter(List<AgentList> agentList, Context context)
+    {
         this.agentList = agentList;
         this.context = context;
     }

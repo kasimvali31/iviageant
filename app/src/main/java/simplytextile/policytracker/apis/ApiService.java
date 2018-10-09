@@ -68,6 +68,9 @@ public interface ApiService
 
 
 
+
+
+
     //Call<SignUpResponse> signupdetails( Integer type_id,String first_name, String last_name, String email1, String phone1, String login_name, String password);
 
 

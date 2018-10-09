@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class PoliciesActivity extends AppCompatActivity
 {
     RecyclerView policies_recycler;
     LinearLayoutManager llm;
+    LinearLayout data_empty_layout;
     ImageView imageView;
     String S_id;
 
@@ -41,6 +43,7 @@ public class PoliciesActivity extends AppCompatActivity
         SharedPreferences mPrefs = getSharedPreferences("IDvalue", 0);
         S_id = mPrefs.getString("key", "");
         policies_recycler = (RecyclerView) findViewById(R.id.policies_recycler);
+        data_empty_layout = (LinearLayout) findViewById(R.id.data_empty_layout);
         llm = new LinearLayoutManager(this);
         imageView=(ImageView)findViewById(R.id.image_addbutton);
         imageView.setOnClickListener(new View.OnClickListener()
@@ -68,10 +71,9 @@ public class PoliciesActivity extends AppCompatActivity
 //                    PoliciesListAdapter adapter=new PoliciesListAdapter(response.body().getData().getPolicy_list(),PoliciesActivity.this);
                 } else
                     {
-                    Toast.makeText(PoliciesActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        data_empty_layout.setVisibility(View.VISIBLE);
                 }
             }
-
             @Override
             public void onFailure(Call<PoliciesResponse> call, Throwable t)
             {
@@ -105,45 +107,49 @@ public class PoliciesActivity extends AppCompatActivity
             viewHolderss.id.setText("" + policy_list.get(i).getId());
             viewHolderss.policy_name.setText("" + policy_list.get(i).getCustomer().getFirst_name() + "( " + policy_list.get(i).getCustomer().getLast_name() + " )");
             viewHolderss.policy_business_name.setText("" + policy_list.get(i).getCustomer().getBusiness_name());
-            viewHolderss.policy_address.setText("" + policy_list.get(i).getCustomer().getAddress().getAddress1() + "," + policy_list.get(i).getCustomer().getAddress().getCity() + "," +
-                    policy_list.get(i).getCustomer().getAddress().getState() + "," + policy_list.get(i).getCustomer().getAddress().getZip());
-            viewHolderss.policy_email.setText("" + policy_list.get(i).getCustomer().getAddress().getEmail1());
+//
             viewHolderss.policy_phone.setText("" + policy_list.get(i).getCustomer().getAddress().getPhone1() + "(" + policy_list.get(i).getCustomer().getAddress().getPhone2() + ")");
+            viewHolderss.company_policy_name.setText("" + policy_list.get(i).getCompany().getPolicy_type().getId());
+            viewHolderss.policy_start_date.setText(""+policy_list.get(i).getCoverage_info().getStart_date());
+            viewHolderss.policy_end_date.setText(""+policy_list.get(i).getCoverage_info().getEnd_date());
 
-            viewHolderss.policy_govtid.setText("" + policy_list.get(i).getCustomer().getGovt_id_number());
-            viewHolderss.policy_aadar.setText("" + policy_list.get(i).getCustomer().getAadhar_number());
-            viewHolderss.policy_dob.setText("" + policy_list.get(i).getCustomer().getDate_of_birth());
-            viewHolderss.company_id.setText("" + policy_list.get(i).getCompany().getId());
-            viewHolderss.company_business_name.setText("" + policy_list.get(i).getCompany().getBusiness_name());
-            viewHolderss.company_irdai_number.setText("" + policy_list.get(i).getCompany().getIrdai_number());
-            viewHolderss.company_govt_id_number.setText("" + policy_list.get(i).getCompany().getGovt_id_number());
-            viewHolderss.company_policy_name.setText("" + policy_list.get(i).getCompany().getPolicy_type().getName() + "(" +
-                    policy_list.get(i).getCompany().getPolicy_type().getId() + " )");
 
-            viewHolderss.company_policy_description.setText("" + policy_list.get(i).getCompany().getPolicy_type().getDescription());
-            viewHolderss.policy_agent_id.setText("" + policy_list.get(i).getCustomer().getAgent().getId());
-            viewHolderss.policy_agent_name.setText("" + policy_list.get(i).getCustomer().getAgent().getFirst_name() + "( " +
-                    policy_list.get(i).getCustomer().getAgent().getLast_name());
 
-            viewHolderss.policy_agent_business.setText("" + policy_list.get(i).getCustomer().getAgent().getBusiness_name());
-            viewHolderss.policy_agent_aadar.setText("" + policy_list.get(i).getCustomer().getAgent().getAadhar_number());
-            viewHolderss.policy_agent_govt.setText("" + policy_list.get(i).getCustomer().getAgent().getGovt_id_number());
-            viewHolderss.policy_agent_update_counter.setText("" + policy_list.get(i).getCustomer().getAgent().getUpdate_counter());
-            viewHolderss.policy_agent_address.setText("" + policy_list.get(i).getCustomer().getAgent().getAddress().getAddress1() + "," +
-                    policy_list.get(i).getCustomer().getAgent().getAddress().getCity() + "," + policy_list.get(i).getCustomer().getAgent().getAddress().getState() + "," +
-                    policy_list.get(i).getCustomer().getAgent().getAddress().getZip());
-            viewHolderss.policy_agent_phone.setText("" + policy_list.get(i).getCustomer().getAgent().getAddress().getPhone1());
-            viewHolderss.policy_agent_email.setText("" + policy_list.get(i).getCustomer().getAgent().getAddress().getEmail1());
+
+//            viewHolderss.policy_govtid.setText("" + policy_list.get(i).getCustomer().getGovt_id_number());
+//            viewHolderss.policy_aadar.setText("" + policy_list.get(i).getCustomer().getAadhar_number());
+//            viewHolderss.policy_dob.setText("" + policy_list.get(i).getCustomer().getDate_of_birth());
+//            viewHolderss.company_id.setText("" + policy_list.get(i).getCompany().getId());
+//            viewHolderss.company_business_name.setText("" + policy_list.get(i).getCompany().getBusiness_name());
+//            viewHolderss.company_irdai_number.setText("" + policy_list.get(i).getCompany().getIrdai_number());
+//            viewHolderss.company_govt_id_number.setText("" + policy_list.get(i).getCompany().getGovt_id_number());
+//
+//
+//            viewHolderss.company_policy_description.setText("" + policy_list.get(i).getCompany().getPolicy_type().getDescription());
+//            viewHolderss.policy_agent_id.setText("" + policy_list.get(i).getCustomer().getAgent().getId());
+//            viewHolderss.policy_agent_name.setText("" + policy_list.get(i).getCustomer().getAgent().getFirst_name() + "( " +
+//                    policy_list.get(i).getCustomer().getAgent().getLast_name());
+//
+//            viewHolderss.policy_agent_business.setText("" + policy_list.get(i).getCustomer().getAgent().getBusiness_name());
+//            viewHolderss.policy_agent_aadar.setText("" + policy_list.get(i).getCustomer().getAgent().getAadhar_number());
+//            viewHolderss.policy_agent_govt.setText("" + policy_list.get(i).getCustomer().getAgent().getGovt_id_number());
+//            viewHolderss.policy_agent_update_counter.setText("" + policy_list.get(i).getCustomer().getAgent().getUpdate_counter());
+//            viewHolderss.policy_agent_address.setText("" + policy_list.get(i).getCustomer().getAgent().getAddress().getAddress1() + "," +
+//                    policy_list.get(i).getCustomer().getAgent().getAddress().getCity() + "," + policy_list.get(i).getCustomer().getAgent().getAddress().getState() + "," +
+//                    policy_list.get(i).getCustomer().getAgent().getAddress().getZip());
+//            viewHolderss.policy_agent_phone.setText("" + policy_list.get(i).getCustomer().getAgent().getAddress().getPhone1());
+//            viewHolderss.policy_agent_email.setText("" + policy_list.get(i).getCustomer().getAgent().getAddress().getEmail1());
         }
 
         @Override
-        public int getItemCount() {
+        public int getItemCount()
+        {
             return policy_list.size();
         }
 
         class ViewHolderss extends RecyclerView.ViewHolder
         {
-            TextView id, policy_name, policy_business_name, policy_address, policy_email, policy_phone, policy_govtid, policy_aadar,
+            TextView id, policy_name, policy_business_name, policy_start_date, policy_end_date, policy_phone, policy_govtid, policy_aadar,
                     policy_dob, company_id, company_business_name, company_irdai_number, company_govt_id_number, company_policy_name,
                     company_policy_description, policy_agent_id, policy_agent_name, policy_agent_business, policy_agent_aadar,
                     policy_agent_govt, policy_agent_update_counter, policy_agent_address, policy_agent_phone, policy_agent_email;
@@ -153,29 +159,34 @@ public class PoliciesActivity extends AppCompatActivity
                 super(itemView);
                 id=(TextView)itemView.findViewById(R.id.id);
                 policy_name=(TextView)itemView.findViewById(R.id.policy_name);
-                policy_name=(TextView)itemView.findViewById(R.id.policy_name);
                 policy_business_name=(TextView)itemView.findViewById(R.id.policy_business_name);
-                policy_address=(TextView)itemView.findViewById(R.id.policy_address);
-                policy_email=(TextView)itemView.findViewById(R.id.policy_email);
-                policy_phone=(TextView)itemView.findViewById(R.id.policy_phone);
-                policy_govtid=(TextView)itemView.findViewById(R.id.policy_govtid);
-                policy_aadar=(TextView)itemView.findViewById(R.id.policy_aadar);
-                policy_dob=(TextView)itemView.findViewById(R.id.policy_dob);
-                company_id=(TextView)itemView.findViewById(R.id.company_id);
-                company_business_name=(TextView)itemView.findViewById(R.id.company_business_name);
-                company_irdai_number=(TextView)itemView.findViewById(R.id.company_irdai_number);
-                company_govt_id_number=(TextView)itemView.findViewById(R.id.company_govt_id_number);
                 company_policy_name=(TextView)itemView.findViewById(R.id.company_policy_name);
-                company_policy_description=(TextView)itemView.findViewById(R.id.company_policy_description);
-                policy_agent_id=(TextView)itemView.findViewById(R.id.policy_agent_id);
-                policy_agent_name=(TextView)itemView.findViewById(R.id.policy_agent_name);
-                policy_agent_business=(TextView)itemView.findViewById(R.id.policy_agent_business);
-                policy_agent_aadar=(TextView)itemView.findViewById(R.id.policy_agent_aadar);
-                policy_agent_govt=(TextView)itemView.findViewById(R.id.policy_agent_govt);
-                policy_agent_update_counter=(TextView)itemView.findViewById(R.id.policy_agent_update_counter);
-                policy_agent_address=(TextView)itemView.findViewById(R.id.policy_agent_address);
-                policy_agent_phone=(TextView)itemView.findViewById(R.id.policy_agent_phone);
-                policy_agent_email=(TextView)itemView.findViewById(R.id.policy_agent_email);
+
+
+                policy_phone=(TextView)itemView.findViewById(R.id.policy_phone);
+                policy_start_date=(TextView)itemView.findViewById(R.id.policy_start_date);
+                policy_end_date=(TextView)itemView.findViewById(R.id.policy_end_dates);
+
+
+
+//                policy_govtid=(TextView)itemView.findViewById(R.id.policy_govtid);
+//                policy_aadar=(TextView)itemView.findViewById(R.id.policy_aadar);
+//                policy_dob=(TextView)itemView.findViewById(R.id.policy_dob);
+//                company_id=(TextView)itemView.findViewById(R.id.company_id);
+//                company_business_name=(TextView)itemView.findViewById(R.id.company_business_name);
+//                company_irdai_number=(TextView)itemView.findViewById(R.id.company_irdai_number);
+//                company_govt_id_number=(TextView)itemView.findViewById(R.id.company_govt_id_number);
+//
+//                company_policy_description=(TextView)itemView.findViewById(R.id.company_policy_description);
+//                policy_agent_id=(TextView)itemView.findViewById(R.id.policy_agent_id);
+//                policy_agent_name=(TextView)itemView.findViewById(R.id.policy_agent_name);
+//                policy_agent_business=(TextView)itemView.findViewById(R.id.policy_agent_business);
+//                policy_agent_aadar=(TextView)itemView.findViewById(R.id.policy_agent_aadar);
+//                policy_agent_govt=(TextView)itemView.findViewById(R.id.policy_agent_govt);
+//                policy_agent_update_counter=(TextView)itemView.findViewById(R.id.policy_agent_update_counter);
+//                policy_agent_address=(TextView)itemView.findViewById(R.id.policy_agent_address);
+//                policy_agent_phone=(TextView)itemView.findViewById(R.id.policy_agent_phone);
+//                policy_agent_email=(TextView)itemView.findViewById(R.id.policy_agent_email);
             }
         }
     }
