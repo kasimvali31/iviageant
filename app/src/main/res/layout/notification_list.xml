@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,25 +19,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:layout_margin="3dp"
+        android:layout_weight="2">
         <TextView
-            android:text="Policy Details :"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#d2121111"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:fontFamily="serif"
-            android:layout_margin="2dp" />
-        <TextView
-            android:id="@+id/policy_number"
-            android:layout_width="match_parent"
+            android:text="Policy Number :"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:textColor="#d2121111"
             android:textSize="15sp"
             android:textStyle="bold"
             app:fontFamily="serif"
-            android:layout_margin="2dp"/>
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/policy_number"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_weight="1"/>
     </LinearLayout>
 
     <!--<LinearLayout-->
@@ -57,130 +66,161 @@
             <!--android:layout_margin="2dp"/>-->
     <!--</LinearLayout>-->
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="vertical">-->
-        <!--<TextView-->
-            <!--android:text="Customer Details :"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textColor="#d2121111"-->
-            <!--android:textSize="15sp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="serif"-->
-            <!--android:layout_margin="2dp"/>-->
-        <!--<TextView-->
-            <!--android:id="@+id/customer_id"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textColor="#d2121111"-->
-            <!--android:textSize="15sp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="serif"-->
-            <!--android:layout_margin="2dp"/>-->
-        <!--<TextView-->
-            <!--android:id="@+id/customer_name"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textColor="#d2121111"-->
-            <!--android:textSize="15sp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="serif"-->
-            <!--android:layout_margin="2dp"/>-->
-        <!--<TextView-->
-            <!--android:id="@+id/business_name"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textColor="#d2121111"-->
-            <!--android:textSize="15sp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="serif"-->
-            <!--android:layout_margin="2dp"/>-->
-    <!--</LinearLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:text="Customer Details :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
+        <TextView
+            android:id="@+id/customer_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="vertical">-->
-        <!--<TextView-->
-            <!--android:text="Company :"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textColor="#d2121111"-->
-            <!--android:textSize="15sp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="serif"-->
-            <!--android:layout_margin="2dp"/>-->
-        <!--<TextView-->
-            <!--android:id="@+id/company_id"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textColor="#d2121111"-->
-            <!--android:textSize="15sp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="serif"-->
-            <!--android:layout_margin="2dp"/>-->
-        <!--<TextView-->
-            <!--android:id="@+id/company_business_name"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textColor="#d2121111"-->
-            <!--android:textSize="15sp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="serif"-->
-            <!--android:layout_margin="2dp"/>-->
+    </LinearLayout>
 
-    <!--</LinearLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:text="Company :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
+        <TextView
+            android:id="@+id/business_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="3dp"
+            android:weightSum="2">
+            <TextView
+                android:text="Policy start date"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textColor="#d2121111"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:fontFamily="serif"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/customer_id"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textColor="#d2121111"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:fontFamily="serif"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="3dp"
+            android:weightSum="2">
+            <TextView
+                android:text="Policy end date"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textColor="#d2121111"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:fontFamily="serif"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/policy_end_date"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textColor="#d2121111"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:fontFamily="serif"
+                android:layout_weight="1"/>
+        </LinearLayout>
 
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="vertical">-->
-        <!--<TextView-->
-            <!--android:text="Format Details :"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textColor="#d2121111"-->
-            <!--android:textSize="15sp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="serif"-->
-            <!--android:layout_margin="2dp"/>-->
-        <!--<TextView-->
-            <!--android:id="@+id/format_id"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textColor="#d2121111"-->
-            <!--android:textSize="15sp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="serif"-->
-            <!--android:layout_margin="2dp"/>-->
 
-    <!--</LinearLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:layout_margin="3dp">
+        <TextView
+            android:text="Type Details :"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_margin="2dp"/>
+        <TextView
+            android:id="@+id/type_id"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textColor="#d2121111"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="serif"
+            android:layout_weight="1"
+            android:layout_margin="2dp"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="3dp"
+            android:layout_weight="2">
+            <TextView
+                android:text="Format Details :"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textColor="#d2121111"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:fontFamily="serif"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/format_id"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textColor="#d2121111"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:fontFamily="serif"
+                android:layout_weight="1"/>
+        </LinearLayout>
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="vertical">-->
-        <!--<TextView-->
-            <!--android:text="Type Details :"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textColor="#d2121111"-->
-            <!--android:textSize="15sp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="serif"-->
-            <!--android:layout_margin="2dp"/>-->
-        <!--<TextView-->
-            <!--android:id="@+id/type_id"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textColor="#d2121111"-->
-            <!--android:textSize="15sp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:fontFamily="serif"-->
-            <!--android:layout_margin="2dp"/>-->
-    <!--</LinearLayout>-->
+    </LinearLayout>
 </LinearLayout>
-</LinearLayout>
+</android.support.v7.widget.CardView>
