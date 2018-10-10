@@ -9,9 +9,9 @@ public class NotificationList
 
     private Policy policy;
 
-    private Customer_ customer;
+    private Customer customer;
 
-    private Company_ company;
+    private Company company;
 
     private Format format;
 
@@ -35,19 +35,19 @@ public class NotificationList
         this.policy = policy;
     }
 
-    public Customer_ getCustomer() {
+    public Customer getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer_ customer) {
+    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
-    public Company_ getCompany() {
+    public Company getCompany() {
         return company;
     }
 
-    public void setCompany(Company_ company) {
+    public void setCompany(Company company) {
         this.company = company;
     }
 

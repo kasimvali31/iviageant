@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity
 
 
     SharedPreferences mPrefs;
+   SharedPreferences.Editor editor;
     String Sid;
     EditText username,upassword;
     Button loginbutton;

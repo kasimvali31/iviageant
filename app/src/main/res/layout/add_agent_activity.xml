@@ -8,7 +8,7 @@
         android:orientation="vertical">
 
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -22,7 +22,7 @@
                 android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -36,7 +36,7 @@
                 android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -50,7 +50,7 @@
                 android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -66,7 +66,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -80,7 +80,7 @@
                 android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -94,7 +94,7 @@
                 android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -109,7 +109,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -123,7 +123,7 @@
                 android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -138,7 +138,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -153,7 +153,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -168,7 +168,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -181,23 +181,8 @@
                 android:padding="10dp"
                 android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
-
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/phone1_add_agents"
-                android:hint="phone number"
-                android:inputType="number"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingLeft="10dp"
-                android:padding="10dp"
-                android:background="@drawable/edittext_shapes"/>
-        </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -210,8 +195,24 @@
                 android:padding="10dp"
                 android:background="@drawable/edittext_shapes"/>
         </android.support.design.widget.TextInputLayout>
+
         <android.support.design.widget.TextInputLayout
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/phone1_add_agents"
+                android:hint="phone number"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
