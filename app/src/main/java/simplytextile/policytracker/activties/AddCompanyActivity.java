@@ -7,7 +7,8 @@ import android.widget.Spinner;
 
 import simplytextile.policytracker.R;
 
-public class AddCompanyActivity extends AppCompatActivity {
+public class AddCompanyActivity extends AppCompatActivity
+{
 
     Spinner companytype,selectcompany;
     @Override
