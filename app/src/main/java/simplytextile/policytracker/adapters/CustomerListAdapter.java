@@ -22,7 +22,8 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
     List<CustomerList> customer_list;
     Context context;
 
-    public CustomerListAdapter(List<CustomerList> customer_list, Context context) {
+    public CustomerListAdapter(List<CustomerList> customer_list, Context context)
+    {
         this.customer_list = customer_list;
         this.context = context;
     }
@@ -35,7 +36,8 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CustomerListAdapter.ViewHolderss viewHolderss, int i) {
+    public void onBindViewHolder(@NonNull CustomerListAdapter.ViewHolderss viewHolderss, int i)
+    {
 
        // viewHolderss.mtext.setText(""+customer_list.get(i).getId()+" ("+customer_list.get(i).getFirst_name()+" )");
 
