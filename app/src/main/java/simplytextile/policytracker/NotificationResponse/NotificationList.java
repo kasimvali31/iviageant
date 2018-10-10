@@ -7,6 +7,16 @@ public class NotificationList
 
     private Integer id;
 
+    public Integer getId()
+    {
+        return id;
+    }
+
+    public void setId(Integer id)
+    {
+        this.id = id;
+    }
+
     private Policy policy;
 
     private Customer customer;
@@ -19,13 +29,6 @@ public class NotificationList
 
     private String sent_date;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Policy getPolicy() {
         return policy;

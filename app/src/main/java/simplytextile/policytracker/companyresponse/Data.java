@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
+import simplytextile.policytracker.NotificationResponse.NotificationList;
 import simplytextile.policytracker.models.AgentList;
 import simplytextile.policytracker.models.CustomerList;
 import simplytextile.policytracker.models.PolicyList;
@@ -36,6 +37,18 @@ public class Data
 
     public List<AgentList> getAgentList() {
         return agentList;
+    }
+
+    @SerializedName("notification_list")
+    @Expose
+    private List<NotificationList> notification_list ;
+
+    public List<NotificationList> getNotification_list() {
+        return notification_list;
+    }
+
+    public void setNotification_list(List<NotificationList> notification_list) {
+        this.notification_list = notification_list;
     }
 
     public void setAgentList(List<AgentList> agentList) {

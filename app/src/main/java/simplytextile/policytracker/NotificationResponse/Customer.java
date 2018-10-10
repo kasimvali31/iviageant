@@ -2,7 +2,7 @@ package simplytextile.policytracker.NotificationResponse;
 
 public class Customer {
 
-    private Integer id;
+   // private Integer id;
 
     private String business_name;
 
@@ -10,13 +10,6 @@ public class Customer {
 
     private String last_name;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getBusiness_name() {
         return business_name;

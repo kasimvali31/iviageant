@@ -1,5 +1,7 @@
 package simplytextile.policytracker.NotificationResponse;
 
+import simplytextile.policytracker.companyresponse.Data;
+
 public class Notresponse
 {
 

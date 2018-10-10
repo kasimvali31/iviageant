@@ -4,38 +4,31 @@ public class Policy
 {
 
 
-    private Integer id;
+    //private Integer id;
 
-    private String policyNumber;
+    private String policy_number ;
 
-    private CoverageInfo coverageInfo;
+    private CoverageInfo coverage_info;
 
     private Customer customer;
 
     private Company company;
 
-    public Integer getId() {
-        return id;
+
+    public String getPolicy_number() {
+        return policy_number;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setPolicy_number(String policy_number) {
+        this.policy_number = policy_number;
     }
 
-    public String getPolicyNumber() {
-        return policyNumber;
+    public CoverageInfo getCoverage_info() {
+        return coverage_info;
     }
 
-    public void setPolicyNumber(String policyNumber) {
-        this.policyNumber = policyNumber;
-    }
-
-    public CoverageInfo getCoverageInfo() {
-        return coverageInfo;
-    }
-
-    public void setCoverageInfo(CoverageInfo coverageInfo) {
-        this.coverageInfo = coverageInfo;
+    public void setCoverage_info(CoverageInfo coverage_info) {
+        this.coverage_info = coverage_info;
     }
 
     public Customer getCustomer() {

@@ -6,5 +6,7 @@
     <color name="colorAppTheme">#0fbab8</color>
     <color name="colorWhite">#FFFAFCFC</color>
     <color name="colorBlack">#FF0E0E0E</color>
+    <color name="background_opacity">#96000000</color>
+    <color name="white">#ffffff</color>
 
 </resources>

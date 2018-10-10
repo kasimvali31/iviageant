@@ -3,6 +3,8 @@ package simplytextile.policytracker.activties;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import simplytextile.policytracker.R;
+
 public class UpdateAgent extends AppCompatActivity {
 
     @Override

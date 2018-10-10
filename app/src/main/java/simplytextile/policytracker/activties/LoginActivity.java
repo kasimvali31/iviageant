@@ -134,13 +134,11 @@ public class LoginActivity extends AppCompatActivity
 
                       username.setText(" ");
                       upassword.setText(" ");
-                      Toast.makeText(LoginActivity.this, "" + response.body().getMessage(), Toast.LENGTH_LONG).show();
                       Sid=response.body().getData().getSession().getId();
                       mPrefs = getSharedPreferences("IDvalue", 0);
                       SharedPreferences.Editor editor = mPrefs.edit();
                       editor.putString("key",Sid );
                       editor.commit();
-                      Toast.makeText(LoginActivity.this, "" +Sid, Toast.LENGTH_LONG).show();
                       LastName=response.body().getData().getSession().getSubscriber().getLast_name();
                        Email=response.body().getData().getSession().getSubscriber().getAddress().getEmail1();
                        Phone=response.body().getData().getSession().getSubscriber().getAddress().getPhone1();

@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="30dp"
+    android:orientation="vertical"
     tools:context=".activties.NotificationActivity">
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/notificationrecylers"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
 
-
-
 </LinearLayout>
+    <include
+        android:visibility="gone"
+        android:id="@+id/data_loading_screen_layout"
+        layout="@layout/data_loading"/>
+</RelativeLayout>

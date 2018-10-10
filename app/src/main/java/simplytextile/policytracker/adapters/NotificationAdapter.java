@@ -41,12 +41,12 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i)
     {
-        viewHolder.policy_number.setText(""+notification_list.get(i).getPolicy().getPolicyNumber());
+        viewHolder.policy_number.setText(""+notification_list.get(i).getPolicy().getPolicy_number());
        // viewHolder.coverage_info.setText(""+notification_list.get(i).getPolicy().getCoverageInfo().getStart_date()+"( "+notification_list.get(i).getPolicy().getCoverageInfo().getEnd_date()+" )");
-        viewHolder.policy_stdate.setText(""+notification_list.get(i).getPolicy().getCoverageInfo().getStart_date());
-        viewHolder.policy_end_date.setText(""+notification_list.get(i).getPolicy().getCoverageInfo().getEnd_date());
+        viewHolder.policy_stdate.setText(""+notification_list.get(i).getPolicy().getCoverage_info().getStart_date());
+        viewHolder.policy_end_date.setText(""+notification_list.get(i).getPolicy().getCoverage_info().getEnd_date());
         viewHolder.customer_name.setText(""+notification_list.get(i).getPolicy().getCustomer().getFirst_name()+"("+notification_list.get(i).getPolicy().getCustomer().getLast_name()+" )");
-        viewHolder.business_name.setText(""+notification_list.get(i).getPolicy().getCustomer().getBusiness_name());
+        viewHolder.business_name.setText(""+notification_list.get(i).getPolicy().getCompany().getBusiness_name());
        // viewHolder.company_business_name.setText(""+notification_list.get(i).getPolicy().getCompany().getBusiness_name());
         viewHolder.format_id.setText(""+notification_list.get(i).getFormat().getName());
         viewHolder.type_id.setText(""+notification_list.get(i).getType().getName());
