@@ -171,26 +171,6 @@ public class PoliciesActivity extends AppCompatActivity
                 policy_start_date=(TextView)itemView.findViewById(R.id.policy_start_date);
                 policy_end_date=(TextView)itemView.findViewById(R.id.policy_end_dates);
 
-
-
-//                policy_govtid=(TextView)itemView.findViewById(R.id.policy_govtid);
-//                policy_aadar=(TextView)itemView.findViewById(R.id.policy_aadar);
-//                policy_dob=(TextView)itemView.findViewById(R.id.policy_dob);
-//                company_id=(TextView)itemView.findViewById(R.id.company_id);
-//                company_business_name=(TextView)itemView.findViewById(R.id.company_business_name);
-//                company_irdai_number=(TextView)itemView.findViewById(R.id.company_irdai_number);
-//                company_govt_id_number=(TextView)itemView.findViewById(R.id.company_govt_id_number);
-//
-//                company_policy_description=(TextView)itemView.findViewById(R.id.company_policy_description);
-//                policy_agent_id=(TextView)itemView.findViewById(R.id.policy_agent_id);
-//                policy_agent_name=(TextView)itemView.findViewById(R.id.policy_agent_name);
-//                policy_agent_business=(TextView)itemView.findViewById(R.id.policy_agent_business);
-//                policy_agent_aadar=(TextView)itemView.findViewById(R.id.policy_agent_aadar);
-//                policy_agent_govt=(TextView)itemView.findViewById(R.id.policy_agent_govt);
-//                policy_agent_update_counter=(TextView)itemView.findViewById(R.id.policy_agent_update_counter);
-//                policy_agent_address=(TextView)itemView.findViewById(R.id.policy_agent_address);
-//                policy_agent_phone=(TextView)itemView.findViewById(R.id.policy_agent_phone);
-//                policy_agent_email=(TextView)itemView.findViewById(R.id.policy_agent_email);
             }
         }
     }
