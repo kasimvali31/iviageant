@@ -12,6 +12,7 @@ import java.util.List;
         import retrofit2.http.Headers;
         import retrofit2.http.POST;
 import simplytextile.policytracker.NotificationResponse.Notresponse;
+import simplytextile.policytracker.companyresponse.AddCmpResponse;
 import simplytextile.policytracker.companyresponse.CompanyList;
         import simplytextile.policytracker.companyresponse.Compres;
         import simplytextile.policytracker.companyresponse.Data;
@@ -59,6 +60,15 @@ public interface ApiService
     @Headers("Content-Type:application/json")
     @GET("/api/notifications")
     Call<Notresponse> getNotification(@Header("app_sid") String S_id);
+
+
+
+    @Headers("Content-Type:application/json")
+    @GET("/api/subscribers/id/companies")
+    Call<AddCmpResponse> addCompany(@Header("app_sid") String S_id);
+
+
+
 
 
 

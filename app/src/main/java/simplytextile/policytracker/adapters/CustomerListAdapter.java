@@ -54,7 +54,8 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
     class ViewHolderss extends RecyclerView.ViewHolder
     {
         TextView mtext,lastname_customer,mobile,customer_id_proof_proof,customer_address,customer_email,customer_dob;
-        public ViewHolderss(@NonNull View itemView) {
+        public ViewHolderss(@NonNull View itemView)
+        {
             super(itemView);
         //    mtext=(TextView)itemView.findViewById(R.id.mtext_customer_id_name);
             lastname_customer=(TextView)itemView.findViewById(R.id.lastname_customer);

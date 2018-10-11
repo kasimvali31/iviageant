@@ -1,61 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activties.AddCompanyActivity">
-
-    <Spinner
-        android:id="@+id/companytype_addcompanyactivity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"/>
-    <Spinner
-        android:id="@+id/selectcompany_addcompanyactivity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"/>
-    <EditText
-        android:id="@+id/cardview_list_title121a"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="License Number*"
-        android:layout_marginTop="15dp"
-        android:clickable="true"
-        android:layout_margin="10dp"
-        android:textColor="@color/colorBlack"
-        android:textSize="16sp" />
-
-
+    android:layout_gravity="center"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:layout_margin="5dp"
-        android:gravity="bottom"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/addcommpany_btn_cancel"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:background="@color/colorAppTheme"
-            android:textColor="@color/colorBlack"
-            android:text="cancel"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/add_company_bid"
+                android:hint="Business Id"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/add_company_name"
+                android:hint="Business name"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/add_company_license_number"
+                android:hint="License number"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_shapes"/>
+        </android.support.design.widget.TextInputLayout>
+
+
         <Button
             android:id="@+id/addcommpany_btn_save"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_margin="5dp"
+            android:layout_gravity="center"
             android:background="@color/colorAppTheme"
             android:textColor="@color/colorBlack"
             android:text="save"/>
-
     </LinearLayout>
-
 </LinearLayout>
