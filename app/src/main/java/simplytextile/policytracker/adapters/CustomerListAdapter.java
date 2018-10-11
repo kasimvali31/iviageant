@@ -39,13 +39,9 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
     public void onBindViewHolder(@NonNull CustomerListAdapter.ViewHolderss viewHolderss, int i)
     {
 
-       // viewHolderss.mtext.setText(""+customer_list.get(i).getId()+" ("+customer_list.get(i).getFirst_name()+" )");
-
+        viewHolderss.mtext.setText(""+customer_list.get(i).getId());
         viewHolderss.lastname_customer.setText(""+customer_list.get(i).getLast_name());
         viewHolderss.mobile.setText(""+customer_list.get(i).getAddress().getPhone1());
-       // viewHolderss.customer_id_proof_proof.setText(""+customer_list.get(i).getId()+" ( "+customer_list.get(i).getGovt_id_number()+" )");
-      //  viewHolderss.customer_address.setText(""+customer_list.get(i).getAddress().getAddress1()+","+customer_list.get(i).getAddress().getCity()+","+
-        //        customer_list.get(i).getAddress().getState()+","+customer_list.get(i).getAddress().getZip());
         viewHolderss.customer_email.setText(""+customer_list.get(i).getAddress().getEmail1());
      //   viewHolderss.customer_dob.setText(""+customer_list.get(i).getDate_of_birth());
     }
