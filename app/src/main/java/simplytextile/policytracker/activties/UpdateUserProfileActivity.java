@@ -14,10 +14,14 @@ public class UpdateUserProfileActivity extends AppCompatActivity {
     String City;
 
     EditText UpdatFirstname,UpdateLastanme,UpdateEmailAdress,UpdateAdharNumber,UPdatecity,UpdatePostal,UpdateState;
+    Bundle b;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_user_profile_activity);
+        b=getIntent().getExtras();
+
         initViews();
     }
 

@@ -51,45 +51,57 @@ public class AddCompanyActivity extends AppCompatActivity
         String cbid=add_company_bid.getText().toString().trim();
         String cmpLicenseNUmber=add_company_license_number.getText().toString().trim();
 
-        JSONObject main=new JSONObject();
-        JSONArray jr1=new JSONArray();
-        JSONObject jro=new JSONObject();
-        try
+        if (cname.isEmpty())
         {
-            jro.put("id",""+cbid);
-            jro.put("activation_date","");
-            jro.put("business_name",cname);
-            jro.put("license_number",cmpLicenseNUmber);
+            add_company_name.requestFocus();
+            add_company_name.setError("enter company");
+        }else if (cbid.isEmpty())
+        {
+            add_company_bid.requestFocus();
+            add_company_bid.setError("enter id");
+        }else if (cmpLicenseNUmber.isEmpty())
+        {
+            add_company_license_number.requestFocus();
+            add_company_license_number.setError("enter licence");
+        }
+        else {
 
-            JSONObject jptype=new JSONObject();
-            jptype.put("id","");
-            jptype.put("name","");
-            jptype.put("description","");
-            jptype.put("parent_id","");
-            jptype.put("is_renewable","");
-            jro.put("policy_type",jptype);
-            jr1.put(jro);
-            main.put("company_list",jr1);
-            Utills.getVolleyResponseJson(AddCompanyActivity.this, Request.Method.POST, "http://dev.simplytextile.com:9081/api/subscribers/id/companies", main, new VolleyCallback() {
-                @Override
-                public void onSuccessResponse(String result)
-                {
+            JSONObject main = new JSONObject();
+            JSONArray jr1 = new JSONArray();
+            JSONObject jro = new JSONObject();
+            try {
+                jro.put("id", "" + cbid);
+                jro.put("activation_date", "");
+                jro.put("business_name", cname);
+                jro.put("license_number", cmpLicenseNUmber);
 
-                    JSONObject jb = null;
-                    try
-                    {
-                        jb = new JSONObject(result);
-                        String   msg=jb.getString("message");
-                        Toast.makeText(AddCompanyActivity.this, ""+msg, Toast.LENGTH_SHORT).show();
-                    } catch (JSONException e)
-                    {
-                        e.printStackTrace();
+                JSONObject jptype = new JSONObject();
+                jptype.put("id", "");
+                jptype.put("name", "");
+                jptype.put("description", "");
+                jptype.put("parent_id", "");
+                jptype.put("is_renewable", "");
+                jro.put("policy_type", jptype);
+                jr1.put(jro);
+                main.put("company_list", jr1);
+                Utills.getVolleyResponseJson(AddCompanyActivity.this, Request.Method.POST, "http://dev.simplytextile.com:9081/api/subscribers/id/companies", main, new VolleyCallback() {
+                    @Override
+                    public void onSuccessResponse(String result) {
+
+                        JSONObject jb = null;
+                        try {
+                            jb = new JSONObject(result);
+                            String msg = jb.getString("message");
+                            Toast.makeText(AddCompanyActivity.this, "" + msg, Toast.LENGTH_SHORT).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
-                }
-            });
+                });
 
-        } catch (JSONException e) {
-            e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
 
     }

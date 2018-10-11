@@ -8,6 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.pdf.PdfWriter;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.List;
 
 import simplytextile.policytracker.R;
@@ -48,6 +55,7 @@ public class AgentsListAdapter extends RecyclerView.Adapter<AgentsListAdapter.Vi
        //         agentList.get(i).getAddress().getState()+","+agentList.get(i).getAddress().getZip());
         viewHolders.agents_id_phone.setText(""+agentList.get(i).getAddress().getPhone1());
         viewHolders.agents_id_email.setText(""+agentList.get(i).getAddress().getEmail1());
+
     }
 
     @Override
