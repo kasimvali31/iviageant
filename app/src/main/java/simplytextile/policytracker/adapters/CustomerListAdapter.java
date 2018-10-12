@@ -47,7 +47,8 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
         viewHolderss.mobile.setText(""+customer_list.get(i).getAddress().getPhone1());
         viewHolderss.customer_email.setText(""+customer_list.get(i).getAddress().getEmail1());
      //   viewHolderss.customer_dob.setText(""+customer_list.get(i).getDate_of_birth());
-        viewHolderss.edit_bill_details.setOnClickListener(new View.OnClickListener() {
+        viewHolderss.edit_bill_details.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v)
             {

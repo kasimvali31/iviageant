@@ -113,78 +113,113 @@ public static String S_id;
 
 
 
-        try {
-
-            JSONObject jmain=new JSONObject();
-            JSONObject jsub1=new JSONObject();
-            jsub1.put("id",0);
-            jsub1.put("business_name",bnames);
-            jsub1.put("first_name",fname);
-            jsub1.put("last_name",lname);
-            jsub1.put("aadhar_number",aadar);
-            jsub1.put("govt_id_number",pan);
-            jsub1.put("date_of_birth",bob);
-
-            JSONObject jsub2=new JSONObject();
-            jsub2.put("address1",add1);
-            jsub2.put("address2","");
-            jsub2.put("address3","");
-            jsub2.put("city",city);
-            jsub2.put("state",state);
-            jsub2.put("zip",postal);
-            jsub2.put("email1",email);
-            jsub2.put("phone1",phone1);
-            jsub2.put("email2","");
-            jsub2.put("phone2",phone2);
-            jsub1.put("address",jsub2);
-
-            JSONObject jsubAgent=new JSONObject();
-            jsubAgent.put("id",10059);
-            jsubAgent.put("business_name","bname");
-            jsubAgent.put("business_name","");
-            jsubAgent.put("first_name","");
-            jsubAgent.put("last_name","");
-            jsubAgent.put("aadhar_number","");
-            jsubAgent.put("govt_id_number","");
-
-            JSONObject jsub3=new JSONObject();
-            jsub3.put("address1","");
-            jsub3.put("address2","");
-            jsub3.put("address3","");
-            jsub3.put("city","");
-            jsub3.put("state","");
-            jsub3.put("zip","");
-            jsub3.put("email1","");
-            jsub3.put("phone1","");
-            jsub3.put("email2","");
-            jsub3.put("phone2","");
-            jsubAgent.put("address",jsub3);
-            jsub1.put("agent",jsubAgent);
-            jmain.put("customer",jsub1);
-
-            Utills.getVolleyResponseJson(AddCustomerActivity.this, Request.Method.POST, "http://dev.simplytextile.com:9081/api/customers", jmain, new VolleyCallback() {
-                @Override
-                public void onSuccessResponse(String result)
-                {
-                    JSONObject jb = null;
-                    try
-                    {
-                        jb = new JSONObject(result);
-                        String   msg=jb.getString("message");
-
-                        Snackbar ss=Snackbar.make((findViewById(android.R.id.content)),""+msg,Snackbar.LENGTH_SHORT);
-                        ss.show();
-                        Toast.makeText(AddCustomerActivity.this, ""+msg, Toast.LENGTH_SHORT).show();
-                    } catch (JSONException e)
-                    {
-                        e.printStackTrace();
-                    }
-
-                }
-            });
-        }catch (Exception e)
+        if (fname.isEmpty())
         {
+            first_name_add_customer.setError("enter name");
+        }else if (lname.isEmpty())
+        {
+            last_name_add_customer.requestFocus();
+            last_name_add_customer.setError("enter last name");
+        }else if (bob.isEmpty())
+        {
+            dob_add_customer.setError("enter birth");
+        }else if (email.isEmpty())
+        {
+            email_name_add_customer.setError("enter email id");
+        }else if (phone1.isEmpty())
+        {
+            phone1_name_add_customer.setError("enter mobile");
+        }else if (aadar.isEmpty())
+        {
+            aadar_name_add_customer.setError("enter aadar number");
+        }else if (pan.isEmpty())
+        {
+            pan_number_name_add_customer.setError("enter pan");
+        }else if (add1.isEmpty())
+        {
+            address1_name_add_customer.setError("enter address");
+        }else if (state.isEmpty())
+        {
+            state_name_add_customer.setError("enter state");
+        }else if (city.isEmpty())
+        {
+            city_name_add_customer.setError("enter city");
+        }else if (postal.isEmpty())
+        {
+            postal_name_add_customer.setError("enter postal code");
+        }
+        else {
 
+
+            try {
+
+                JSONObject jmain = new JSONObject();
+                JSONObject jsub1 = new JSONObject();
+                jsub1.put("id", 0);
+                jsub1.put("business_name", bnames);
+                jsub1.put("first_name", fname);
+                jsub1.put("last_name", lname);
+                jsub1.put("aadhar_number", aadar);
+                jsub1.put("govt_id_number", pan);
+                jsub1.put("date_of_birth", bob);
+
+                JSONObject jsub2 = new JSONObject();
+                jsub2.put("address1", add1);
+                jsub2.put("address2", "");
+                jsub2.put("address3", "");
+                jsub2.put("city", city);
+                jsub2.put("state", state);
+                jsub2.put("zip", postal);
+                jsub2.put("email1", email);
+                jsub2.put("phone1", phone1);
+                jsub2.put("email2", "");
+                jsub2.put("phone2", phone2);
+                jsub1.put("address", jsub2);
+
+                JSONObject jsubAgent = new JSONObject();
+                jsubAgent.put("id", 10059);
+                jsubAgent.put("business_name", "bname");
+                jsubAgent.put("business_name", "");
+                jsubAgent.put("first_name", "");
+                jsubAgent.put("last_name", "");
+                jsubAgent.put("aadhar_number", "");
+                jsubAgent.put("govt_id_number", "");
+
+                JSONObject jsub3 = new JSONObject();
+                jsub3.put("address1", "");
+                jsub3.put("address2", "");
+                jsub3.put("address3", "");
+                jsub3.put("city", "");
+                jsub3.put("state", "");
+                jsub3.put("zip", "");
+                jsub3.put("email1", "");
+                jsub3.put("phone1", "");
+                jsub3.put("email2", "");
+                jsub3.put("phone2", "");
+                jsubAgent.put("address", jsub3);
+                jsub1.put("agent", jsubAgent);
+                jmain.put("customer", jsub1);
+
+                Utills.getVolleyResponseJson(AddCustomerActivity.this, Request.Method.POST, "http://dev.simplytextile.com:9081/api/customers", jmain, new VolleyCallback() {
+                    @Override
+                    public void onSuccessResponse(String result) {
+                        JSONObject jb = null;
+                        try {
+                            jb = new JSONObject(result);
+                            String msg = jb.getString("message");
+
+                            Snackbar ss = Snackbar.make((findViewById(android.R.id.content)), "" + msg, Snackbar.LENGTH_SHORT);
+                            ss.show();
+                            Toast.makeText(AddCustomerActivity.this, "" + msg, Toast.LENGTH_SHORT).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
+            } catch (Exception e) {
+
+            }
         }
     }
     @Override
