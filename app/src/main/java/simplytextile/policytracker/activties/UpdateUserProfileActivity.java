@@ -9,9 +9,10 @@ import android.widget.Toast;
 
 import simplytextile.policytracker.R;
 
-public class UpdateUserProfileActivity extends AppCompatActivity {
+public class UpdateUserProfileActivity extends AppCompatActivity
+{
     Spinner selectcstate;
-    String City;
+    String City,bname,fname,lname,dob,email,p1,p2,aadar,pan,add1,citys,state,pin;
 
     EditText UpdatFirstname,UpdateLastanme,UpdateEmailAdress,UpdateAdharNumber,UPdatecity,UpdatePostal,UpdateState;
     Bundle b;
@@ -21,6 +22,19 @@ public class UpdateUserProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_user_profile_activity);
         b=getIntent().getExtras();
+        bname=b.getString("bname");
+        fname=b.getString("fname");
+        lname=b.getString("lname");
+        dob=b.getString("dob");
+        email=b.getString("email");
+        p1=b.getString("p1");
+        p2=b.getString("p2");
+        aadar=b.getString("aadar");
+        pan=b.getString("pan");
+        add1=b.getString("add1");
+        citys=b.getString("city");
+        state=b.getString("state");
+        pin=b.getString("pin");
 
         initViews();
     }
