@@ -50,7 +50,6 @@ public class AgentsListAdapter extends RecyclerView.Adapter<AgentsListAdapter.Vi
         viewHolders.agents_id_lastname.setText(""+agentList.get(i).getLast_name());
         //viewHolders.agents_id_business_name.setText(""+agentList.get(i).getBusiness_name());
       //  viewHolders.agents_id_govt_details.setText(""+agentList.get(i).getGovt_id_number()+" ( "+agentList.get(i).getAadhar_number());
-       // viewHolders.agents_id_cretaed_on.setText(""+agentList.get(i).getCreated());
      //   viewHolders.agents_id_address.setText(""+agentList.get(i).getAddress().getAddress1()+","+agentList.get(i).getAddress().getCity()+","+
        //         agentList.get(i).getAddress().getState()+","+agentList.get(i).getAddress().getZip());
         viewHolders.agents_id_phone.setText(""+agentList.get(i).getAddress().getPhone1());
