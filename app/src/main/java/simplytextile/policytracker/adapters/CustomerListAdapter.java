@@ -86,7 +86,6 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
             //mtext=(TextView)itemView.findViewById(R.id.mtext_customer_id_name);
             lastname_customer=(TextView)itemView.findViewById(R.id.lastname_customer);
             mobile=(TextView)itemView.findViewById(R.id.mobile);
-         //   customer_id_proof_proof=(TextView)itemView.findViewById(R.id.customer_id_proof_proof);
          //   customer_address=(TextView)itemView.findViewById(R.id.customer_address);
             customer_email=(TextView)itemView.findViewById(R.id.customer_email);
             edit_bill_details=(ImageView)itemView.findViewById(R.id.edit_bill_details);
