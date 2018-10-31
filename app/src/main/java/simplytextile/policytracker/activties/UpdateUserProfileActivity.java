@@ -184,6 +184,8 @@ public class UpdateUserProfileActivity extends AppCompatActivity
 
                 JSONObject jmain = new JSONObject();
                 JSONObject jsub1 = new JSONObject();
+                JSONObject jmore1 = new JSONObject();
+                JSONObject jmore2 = new JSONObject();
                 jsub1.put("id", 0);
                 jsub1.put("business_name", "");
                 jsub1.put("first_name", fname);
@@ -191,6 +193,10 @@ public class UpdateUserProfileActivity extends AppCompatActivity
                 jsub1.put("aadhar_number", aadar);
                 jsub1.put("govt_id_number", pan);
                 jsub1.put("date_of_birth", bob);
+                jsub1.put("status_id", bob);
+                jsub1.put("created","");
+                jsub1.put("last_updated","");
+                jsub1.put("update_counter","");
 
                 JSONObject jsub2 = new JSONObject();
                 jsub2.put("address1", add1);
@@ -203,18 +209,28 @@ public class UpdateUserProfileActivity extends AppCompatActivity
                 jsub2.put("phone1", phone1);
                 jsub2.put("email2", "");
                 jsub2.put("phone2", phone2);
+                jsub2.put("created","");
+                jsub2.put("last_updated","");
+                jsub2.put("update_counter","");
+
                 jsub1.put("address", jsub2);
 
                 JSONObject jsubAgent = new JSONObject();
                 jsubAgent.put("id", 10059);
-                jsubAgent.put("business_name", "bname");
                 jsubAgent.put("business_name", "");
                 jsubAgent.put("first_name", "");
                 jsubAgent.put("last_name", "");
                 jsubAgent.put("aadhar_number", "");
                 jsubAgent.put("govt_id_number", "");
+                jsubAgent.put("created","");
+                jsubAgent.put("last_updated","");
+                jsubAgent.put("notes","");
+
 
                 JSONObject jsub3 = new JSONObject();
+                jsub3.put("id", 0);
+                jsub3.put("first_name", fname);
+                jsub3.put("last_name", lname);
                 jsub3.put("address1", "");
                 jsub3.put("address2", "");
                 jsub3.put("address3", "");
@@ -225,11 +241,17 @@ public class UpdateUserProfileActivity extends AppCompatActivity
                 jsub3.put("phone1", "");
                 jsub3.put("email2", "");
                 jsub3.put("phone2", "");
+                jsub3.put("created","");
+                jsub3.put("last_updated","");
+                jsub3.put("update_counter","");
+
+                jsubAgent.put("more", jmore1);
                 jsubAgent.put("address", jsub3);
                 jsub1.put("agent", jsubAgent);
+                jsub1.put("more", jmore2);
                 jmain.put("customer", jsub1);
 
-                Utills.getVolleyResponseJson(UpdateUserProfileActivity.this, Request.Method.POST, "http://dev.simplytextile.com:9081/api/customers", jmain, new VolleyCallback() {
+                Utills.getVolleyResponseJson(UpdateUserProfileActivity.this, Request.Method.PUT, "http://dev.simplytextile.com:9081/api/customers", jmain, new VolleyCallback() {
                     @Override
                     public void onSuccessResponse(String result) {
                         JSONObject jb = null;
