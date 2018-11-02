@@ -106,9 +106,6 @@ public class UpdateUserProfileActivity extends AppCompatActivity
                 updateCustomer();
             }
         });
-
-
-
         UpdatFirstname.setText(""+fname);
         UpdateLastanme.setText(""+lname);
         dob_add_customer.setText(""+dob);
@@ -180,7 +177,8 @@ public class UpdateUserProfileActivity extends AppCompatActivity
         else {
 
 
-            try {
+            try
+            {
 
                 JSONObject jmain = new JSONObject();
                 JSONObject jsub1 = new JSONObject();
@@ -259,8 +257,7 @@ public class UpdateUserProfileActivity extends AppCompatActivity
                             jb = new JSONObject(result);
                             String msg = jb.getString("message");
 
-                            Snackbar ss = Snackbar.make((findViewById(android.R.id.content)), "" + msg, Snackbar.LENGTH_SHORT);
-                            ss.show();
+
                             Toast.makeText(UpdateUserProfileActivity.this, "" + msg, Toast.LENGTH_SHORT).show();
                         } catch (JSONException e)
                         {

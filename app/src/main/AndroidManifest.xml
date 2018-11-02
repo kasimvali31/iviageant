@@ -39,7 +39,8 @@
         <activity android:name=".activties.AddAgentActivity" />
         <activity android:name=".activties.CompaniesListAct" />
         <activity android:name=".activties.AddPoliciesAct" />
-        <activity android:name=".activties.UpdateCustomer"></activity>
+        <activity android:name=".activties.UpdateCustomer">
+        </activity>
     </application>
 
 </manifest>

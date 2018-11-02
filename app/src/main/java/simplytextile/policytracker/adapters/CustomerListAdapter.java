@@ -9,10 +9,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
 
 import simplytextile.policytracker.R;
+import simplytextile.policytracker.Utills;
+import simplytextile.policytracker.VolleyCallback;
 import simplytextile.policytracker.activties.UpdateUserProfileActivity;
 import simplytextile.policytracker.models.CustomerList;
 
@@ -47,8 +55,8 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
         viewHolderss.mobile.setText(""+customer_list.get(i).getAddress().getPhone1());
         viewHolderss.customer_email.setText(""+customer_list.get(i).getAddress().getEmail1());
      //   viewHolderss.customer_dob.setText(""+customer_list.get(i).getDate_of_birth());
-        viewHolderss.edit_bill_details.setOnClickListener(new View.OnClickListener()
-        {
+        viewHolderss.edit_bill_details.setOnClickListener(
+                new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
@@ -67,6 +75,107 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
                 ss.putExtra("state",""+customer_list.get(i).getAddress().getState());
                 ss.putExtra("pin",""+customer_list.get(i).getAddress().getZip());
                 context.startActivity(ss);
+            }
+        });
+
+        viewHolderss.delete_bill_details.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                try
+                {
+
+                    JSONObject jmain = new JSONObject();
+                    JSONObject jsub1 = new JSONObject();
+                    JSONObject jmore1 = new JSONObject();
+                    JSONObject jmore2 = new JSONObject();
+                    jsub1.put("id", 0);
+                    jsub1.put("business_name", "");
+                    jsub1.put("first_name", customer_list.get(i).getFirst_name());
+                    jsub1.put("last_name", customer_list.get(i).getLast_name());
+                    jsub1.put("aadhar_number", customer_list.get(i).getAadhar_number());
+                    jsub1.put("govt_id_number", customer_list.get(i).getGovt_id_number());
+                    jsub1.put("date_of_birth", customer_list.get(i).getDate_of_birth());
+                    jsub1.put("status_id", "");
+                    jsub1.put("created","");
+                    jsub1.put("last_updated","");
+                    jsub1.put("update_counter","");
+
+                    JSONObject jsub2 = new JSONObject();
+                    jsub2.put("address1", customer_list.get(i).getAddress().getAddress1());
+                    jsub2.put("address2", "");
+                    jsub2.put("address3", "");
+                    jsub2.put("city", customer_list.get(i).getAddress().getCity());
+                    jsub2.put("state", customer_list.get(i).getAddress().getState());
+                    jsub2.put("zip", customer_list.get(i).getAddress().getZip());
+                    jsub2.put("email1", customer_list.get(i).getAddress().getEmail1());
+                    jsub2.put("phone1", customer_list.get(i).getAddress().getPhone1());
+                    jsub2.put("email2", "");
+                    jsub2.put("phone2", customer_list.get(i).getAddress().getPhone2());
+                    jsub2.put("created","");
+                    jsub2.put("last_updated","");
+                    jsub2.put("update_counter","");
+
+                    jsub1.put("address", jsub2);
+
+                    JSONObject jsubAgent = new JSONObject();
+                    jsubAgent.put("id", 10059);
+                    jsubAgent.put("business_name", "");
+                    jsubAgent.put("first_name", "");
+                    jsubAgent.put("last_name", "");
+                    jsubAgent.put("aadhar_number", "");
+                    jsubAgent.put("govt_id_number", "");
+                    jsubAgent.put("created","");
+                    jsubAgent.put("last_updated","");
+                    jsubAgent.put("notes","");
+
+
+                    JSONObject jsub3 = new JSONObject();
+                    jsub3.put("id", 0);
+                    jsub3.put("first_name", customer_list.get(i).getFirst_name());
+                    jsub3.put("last_name", customer_list.get(i).getLast_name());
+                    jsub3.put("address1", "");
+                    jsub3.put("address2", "");
+                    jsub3.put("address3", "");
+                    jsub3.put("city", "");
+                    jsub3.put("state", "");
+                    jsub3.put("zip", "");
+                    jsub3.put("email1", "");
+                    jsub3.put("phone1", "");
+                    jsub3.put("email2", "");
+                    jsub3.put("phone2", "");
+                    jsub3.put("created","");
+                    jsub3.put("last_updated","");
+                    jsub3.put("update_counter","");
+
+                    jsubAgent.put("more", jmore1);
+                    jsubAgent.put("address", jsub3);
+                    jsub1.put("agent", jsubAgent);
+                    jsub1.put("more", jmore2);
+                    jmain.put("customer", jsub1);
+
+                    Utills.getVolleyResponseJson(context, Request.Method.DELETE, "http://dev.simplytextile.com:9081/api/customers/"+customer_list.get(i).getId(), jmain, new VolleyCallback() {
+                        @Override
+                        public void onSuccessResponse(String result) {
+                            JSONObject jb = null;
+                            try {
+                                jb = new JSONObject(result);
+                                String msg = jb.getString("message");
+
+
+                                Toast.makeText(context, "" + msg, Toast.LENGTH_SHORT).show();
+                            } catch (JSONException e)
+                            {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    });
+                } catch (Exception e)
+                {
+
+                }
             }
         });
     }
