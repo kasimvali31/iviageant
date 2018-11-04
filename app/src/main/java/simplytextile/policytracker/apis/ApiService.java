@@ -35,7 +35,7 @@ public interface ApiService
 
 
     @GET("api/companies")
-    Call<Compres> getCompanies( );
+    Call<Compres> getCompanies();
 
     @GET("api/companies")
     Call<List<CompanyList>> getCompaniesList();

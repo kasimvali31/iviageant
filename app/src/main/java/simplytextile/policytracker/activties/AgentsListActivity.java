@@ -70,6 +70,7 @@ public class AgentsListActivity extends AppCompatActivity
                     AgentsListAdapter adapter=new AgentsListAdapter(response.body().getData().getAgentList(),AgentsListActivity.this);
                     agents_list_recycler.setAdapter(adapter);
                     agents_list_recycler.setLayoutManager(llm);
+
                 }
                 else
                 {
